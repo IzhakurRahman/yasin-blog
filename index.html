@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Yasin's Blog — ব্যক্তিগত ভাবনা, গল্প, অভিজ্ঞতা ও শেখার যাত্রা।">
+<title>Yasin's Blog — Personal Journal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080808;--panel:#111;--panel2:#151515;--white:#f5f5f2;--muted:#a3a3a0;--line:#292929;--accent:#d9d9d2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:"Hind Siliguri","DM Sans",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 44px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:#080808eF;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:800 19px "DM Sans",sans-serif;letter-spacing:-.6px}.brand span{color:#888}.navlinks{display:flex;gap:28px;color:#b8b8b3;font-size:14px}.navlinks a:hover{color:#fff}
+.hero{padding:104px 0 88px;display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center;min-height:570px}
+.kicker{font:600 11px "DM Sans",sans-serif;letter-spacing:2.8px;text-transform:uppercase;color:#a5a5a0;display:flex;align-items:center;gap:12px}.kicker:before{content:"";height:1px;width:34px;background:#aaa}
+h1{font:700 clamp(48px,7vw,82px)/1.04 "DM Sans","Hind Siliguri",sans-serif;letter-spacing:-3.6px;margin:25px 0 22px}h1 .bn{font-family:"Hind Siliguri",sans-serif;font-weight:600;letter-spacing:-1px;color:#aaa}
+.lead{font-size:18px;line-height:1.9;color:#aaa;max-width:600px}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 21px;border:1px solid #eee;border-radius:3px;font-size:14px;font-weight:600;transition:.2s}.primary{background:#f1f1ed;color:#090909}.secondary{color:#eee;border-color:#555}.btn:hover{transform:translateY(-2px);background:#ccc;color:#090909;border-color:#ccc}
+.visual{height:365px;background:linear-gradient(145deg,#1b1b1b,#090909);border:1px solid #303030;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.profile-visual img{width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:grayscale(100%) contrast(1.04);display:block}
+.profile-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#0009);pointer-events:none}
+.visual:before,.visual:after{content:"";position:absolute;border:1px solid #383838;border-radius:50%;width:290px;height:290px}.visual:after{width:220px;height:220px}
+.monogram{font:800 104px "DM Sans",sans-serif;letter-spacing:-10px;color:#eee;z-index:1}.visual-label{position:absolute;bottom:22px;left:24px;font:500 10px "DM Sans",sans-serif;letter-spacing:2px;color:#888}
+.section{padding:48px 0 62px}.section-top{display:flex;align-items:end;justify-content:space-between;margin-bottom:25px}.overline{font:600 10px "DM Sans",sans-serif;letter-spacing:2.5px;color:#858581;text-transform:uppercase}.section-title{font-size:31px;margin:7px 0 0}.section-desc{color:#858581;font-size:14px;margin:4px 0 0}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.post{background:var(--panel);border:1px solid var(--line);transition:.25s}.post:hover{border-color:#777;transform:translateY(-4px)}
+.art{height:155px;display:flex;align-items:center;justify-content:center;background:#171717;border-bottom:1px solid #292929;position:relative;overflow:hidden}.art:before{content:"";width:115px;height:115px;border:1px solid #555;border-radius:50%;position:absolute}.art:after{content:"";width:75px;height:75px;border:1px solid #555;border-radius:50%;position:absolute}.art span{font:700 12px "DM Sans",sans-serif;letter-spacing:3px;color:#bbb;z-index:1}
+.post:nth-child(2) .art{background:#1b1b1b}.post:nth-child(3) .art{background:#141414}.post-body{padding:21px}.tag{font:600 10px "DM Sans",sans-serif;letter-spacing:1.8px;text-transform:uppercase;color:#aaa}.post h3{font-size:21px;line-height:1.45;margin:10px 0}.post p{font-size:14px;line-height:1.8;color:#999;margin:0 0 17px}.meta{font:11px "DM Sans",sans-serif;color:#777}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:45px;padding:37px;border:1px solid var(--line);background:#101010}.about h2{font-size:31px;margin:8px 0 13px}.about p{font-size:16px;line-height:1.9;color:#aaa;margin:0}.quote{font:500 24px/1.55 "DM Sans","Hind Siliguri",sans-serif;color:#e6e6e2;border-left:1px solid #777;padding:10px 0 10px 25px;align-self:center}.quote small{display:block;font:14px "Hind Siliguri",sans-serif;color:#888;margin-top:12px}
+.contact{padding:35px 38px;background:#eee;color:#111;display:flex;justify-content:space-between;align-items:center;gap:25px}.contact h2{font-size:29px;margin:0 0 5px}.contact p{margin:0;color:#555}.contact .btn{border-color:#111;background:#111;color:#fff;white-space:nowrap}.contact .btn:hover{background:#444}
+footer{padding:28px 0;color:#777;font-size:13px}.foot{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:15px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:75px 0 55px;gap:35px}.visual{height:280px}.posts{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr;gap:25px}}
+@media(max-width:560px){.wrap{width:calc(100% - 30px)}nav{height:66px}.navlinks{gap:12px;font-size:12px}.brand{font-size:16px}.hero{padding:58px 0 42px}h1{font-size:49px;letter-spacing:-2px}.lead{font-size:16px}.visual{height:235px}.monogram{font-size:85px}.posts{grid-template-columns:1fr}.section-top{display:block}.about{padding:25px}.contact{padding:27px;align-items:flex-start;flex-direction:column}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="brand" href="#home">YASIN<span>'S BLOG.</span></a>
+<div class="navlinks"><a href="#home">হোম / Home</a><a href="#blog">ব্লগ / Blog</a><a href="#about">পরিচিতি / About</a><a href="#contact">যোগাযোগ / Contact</a></div>
+</nav></div></header>
+<main><div class="wrap">
+<section class="hero" id="home">
+<div>
+<div class="kicker">PERSONAL JOURNAL · 2026</div>
+<h1>Ideas. Stories.<br><span class="bn">আমার নিজের গল্প।</span></h1>
+<p class="lead">স্বাগতম Yasin's Blog-এ। এখানে আমি শেয়ার করি আমার ভাবনা, অভিজ্ঞতা, শেখার গল্প এবং জীবনের ছোট ছোট মুহূর্ত। A personal space for thoughts, creativity and growth.</p>
+<div class="actions"><a class="btn primary" href="#blog">লেখা পড়ুন / Read stories ↗</a><a class="btn secondary" href="#about">আমার সম্পর্কে / About me</a></div>
+</div>
+<div class="visual profile-visual"><img src="assets/yasin-profile.jpg" alt="Yasin's profile photo"><div class="visual-label">A PERSONAL SPACE BY YASIN</div></div>
+</section>
+
+<section class="section" id="blog">
+<div class="section-top"><div><div class="overline">THE JOURNAL</div><h2 class="section-title">সাম্প্রতিক লেখা / Latest Posts</h2><p class="section-desc">Thoughts, notes and stories from my journey.</p></div></div>
+<div class="posts">
+<article class="post"><div class="art"><span>01 — LIFE</span></div><div class="post-body"><div class="tag">জীবন · LIFE</div><h3>নতুন করে শুরু করার সাহস</h3><p>প্রতিটি সকাল নতুন সম্ভাবনা নিয়ে আসে। শুরুটা ছোট হলেও, এগিয়ে যাওয়াটাই সবচেয়ে গুরুত্বপূর্ণ।</p><div class="meta">NOV 09, 2026 · 3 MIN READ</div></div></article>
+<article class="post"><div class="art"><span>02 — THOUGHTS</span></div><div class="post-body"><div class="tag">ভাবনা · THOUGHTS</div><h3>ছোট ছোট স্বপ্নের গল্প</h3><p>বড় স্বপ্নের পথে প্রতিদিনের ছোট পদক্ষেপই একদিন বড় পরিবর্তনের কারণ হয়ে দাঁড়ায়।</p><div class="meta">NOV 05, 2026 · 2 MIN READ</div></div></article>
+<article class="post"><div class="art"><span>03 — GROWTH</span></div><div class="post-body"><div class="tag">শেখা · LEARNING</div><h3>প্রতিদিন একটু একটু উন্নতি</h3><p>নিজেকে গতকালের চেয়ে ভালো করার চেষ্টা—এই ধারাবাহিকতাই আমার কাছে সাফল্য।</p><div class="meta">NOV 01, 2026 · 4 MIN READ</div></div></article>
+</div>
+</section>
+
+<section class="section" id="about">
+<div class="about"><div><div class="overline">A LITTLE INTRODUCTION</div><h2>আমি Yasin. / I'm Yasin.</h2><p>আমি একজন শিক্ষার্থী, স্বপ্ন দেখি এবং প্রতিনিয়ত নতুন কিছু শেখার চেষ্টা করি। এই ব্লগটি আমার নিজস্ব জায়গা—যেখানে নিজের চিন্তা, পছন্দ, অভিজ্ঞতা ও শেখার যাত্রা লিখে রাখব। এখানে নিজের ছবি, পড়াশোনা, শখ ও লক্ষ্য সম্পর্কে আরও যোগ করতে পারো।</p></div>
+<div class="quote">“নিজের গল্প নিজেকেই লিখতে হয়। প্রতিদিনের ছোট প্রচেষ্টাই একদিন বড় গল্প হয়ে ওঠে।”<small>— A note to myself</small></div></div>
+</section>
+
+<section class="section" id="contact"><div class="contact"><div><h2>চলো কথা বলি। / Let's connect.</h2><p>মতামত, প্রশ্ন বা যোগাযোগের জন্য ইমেইল করো।</p></div><a class="btn" href="mailto:syedizhakurrahman@gmail.com">ইমেইল পাঠাও / Email me ↗</a></div></section>
+</div></main>
+<footer><div class="wrap foot"><span>© 2026 YASIN'S BLOG. All rights reserved.</span><span>নিজের গল্প, নিজের ভাষায়। / Your story, your words.</span></div></footer>
+</body></html>
