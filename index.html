@@ -1,140 +1,114 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Yasin's Blog — ব্যক্তিগত ভাবনা, গল্প, অভিজ্ঞতা ও শেখার যাত্রা।">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Yasin's Blog — thoughts, stories, portfolio and personal journal.">
+<meta name="theme-color" content="#090909">
 <title>Yasin's Blog — Personal Journal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#080808;--panel:#111;--panel2:#151515;--white:#f5f5f2;--muted:#a3a3a0;--line:#292929;--accent:#d9d9d2}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:"Hind Siliguri","DM Sans",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 44px));margin:auto}
-header{position:sticky;top:0;z-index:10;background:#080808eF;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:800 19px "DM Sans",sans-serif;letter-spacing:-.6px}.brand span{color:#888}.navlinks{display:flex;gap:28px;color:#b8b8b3;font-size:14px}.navlinks a:hover{color:#fff}
-.hero{padding:104px 0 88px;display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center;min-height:570px}
-.kicker{font:600 11px "DM Sans",sans-serif;letter-spacing:2.8px;text-transform:uppercase;color:#a5a5a0;display:flex;align-items:center;gap:12px}.kicker:before{content:"";height:1px;width:34px;background:#aaa}
-h1{font:700 clamp(48px,7vw,82px)/1.04 "DM Sans","Hind Siliguri",sans-serif;letter-spacing:-3.6px;margin:25px 0 22px}h1 .bn{font-family:"Hind Siliguri",sans-serif;font-weight:600;letter-spacing:-1px;color:#aaa}
-.lead{font-size:18px;line-height:1.9;color:#aaa;max-width:600px}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 21px;border:1px solid #eee;border-radius:3px;font-size:14px;font-weight:600;transition:.2s}.primary{background:#f1f1ed;color:#090909}.secondary{color:#eee;border-color:#555}.btn:hover{transform:translateY(-2px);background:#ccc;color:#090909;border-color:#ccc}
-.visual{height:365px;background:linear-gradient(145deg,#1b1b1b,#090909);border:1px solid #303030;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.profile-visual img{width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:grayscale(100%) contrast(1.04);display:block}
-.profile-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#0009);pointer-events:none}.profile-visual:before,.profile-visual:after{display:none}
-.visual:before,.visual:after{content:"";position:absolute;border:1px solid #383838;border-radius:50%;width:290px;height:290px}.visual:after{width:220px;height:220px}
-.monogram{font:800 104px "DM Sans",sans-serif;letter-spacing:-10px;color:#eee;z-index:1}.visual-label{position:absolute;bottom:22px;left:24px;font:500 10px "DM Sans",sans-serif;letter-spacing:2px;color:#888}
-.section{padding:48px 0 62px}.section-top{display:flex;align-items:end;justify-content:space-between;margin-bottom:25px}.overline{font:600 10px "DM Sans",sans-serif;letter-spacing:2.5px;color:#858581;text-transform:uppercase}.section-title{font-size:31px;margin:7px 0 0}.section-desc{color:#858581;font-size:14px;margin:4px 0 0}
-.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.post{background:var(--panel);border:1px solid var(--line);transition:.25s}.post:hover{border-color:#777;transform:translateY(-4px)}
-.art{height:155px;display:flex;align-items:center;justify-content:center;background:#171717;border-bottom:1px solid #292929;position:relative;overflow:hidden}.art:before{content:"";width:115px;height:115px;border:1px solid #555;border-radius:50%;position:absolute}.art:after{content:"";width:75px;height:75px;border:1px solid #555;border-radius:50%;position:absolute}.art span{font:700 12px "DM Sans",sans-serif;letter-spacing:3px;color:#bbb;z-index:1}
-.post:nth-child(2) .art{background:#1b1b1b}.post:nth-child(3) .art{background:#141414}.post-body{padding:21px}.tag{font:600 10px "DM Sans",sans-serif;letter-spacing:1.8px;text-transform:uppercase;color:#aaa}.post h3{font-size:21px;line-height:1.45;margin:10px 0}.post p{font-size:14px;line-height:1.8;color:#999;margin:0 0 17px}.meta{font:11px "DM Sans",sans-serif;color:#777}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:45px;padding:37px;border:1px solid var(--line);background:#101010}.about h2{font-size:31px;margin:8px 0 13px}.about p{font-size:16px;line-height:1.9;color:#aaa;margin:0}.quote{font:500 24px/1.55 "DM Sans","Hind Siliguri",sans-serif;color:#e6e6e2;border-left:1px solid #777;padding:10px 0 10px 25px;align-self:center}.quote small{display:block;font:14px "Hind Siliguri",sans-serif;color:#888;margin-top:12px}
-.contact{padding:35px 38px;background:#eee;color:#111;display:flex;justify-content:space-between;align-items:center;gap:25px}.contact h2{font-size:29px;margin:0 0 5px}.contact p{margin:0;color:#555}.contact .btn{border-color:#111;background:#111;color:#fff;white-space:nowrap}.contact .btn:hover{background:#444}
-footer{padding:28px 0;color:#777;font-size:13px}.foot{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.gallery-item{margin:0;background:#111;border:1px solid var(--line)}.gallery-item img{width:100%;height:230px;object-fit:cover;filter:grayscale(100%);display:block}.gallery-item figcaption{padding:12px;color:#aaa;font-size:13px}
-.social-links{display:flex;gap:18px;margin-top:16px}.social-links a{color:#222;text-decoration:underline;font-weight:700}.share-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.share-actions,.admin-actions{display:flex;gap:10px;flex-wrap:wrap}.mini-btn,.file-label{background:#171717;color:#eee;border:1px solid #555;padding:10px 15px;border-radius:3px;font:600 13px "Hind Siliguri",sans-serif;cursor:pointer}.mini-btn:hover,.file-label:hover{background:#333}.admin-box{border:1px solid #333;background:#101010;padding:28px}.admin-warning{background:#1b1b1b;border-left:3px solid #aaa;padding:13px 16px;color:#aaa;font-size:13px;line-height:1.7}.admin-form{display:grid;gap:15px}.admin-form label{display:grid;gap:7px;color:#bbb;font-size:14px}.admin-form input,.admin-form textarea{width:100%;background:#080808;color:#eee;border:1px solid #444;padding:12px;font:14px "Hind Siliguri",sans-serif;border-radius:3px}.admin-form input[type=file]{padding:8px}.admin-form hr{width:100%;border:0;border-top:1px solid #333}.file-label input{display:block;max-width:100%;margin-top:8px}.light{background:#eee;color:#111;border-color:#eee}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding:75px 0 55px;gap:35px}.visual{height:280px}.posts{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr;gap:25px}}
-@media(max-width:560px){.gallery-grid{grid-template-columns:1fr 1fr}.gallery-item img{height:155px}.admin-box{padding:18px}.wrap{width:calc(100% - 30px)}nav{height:66px}.navlinks{gap:12px;font-size:12px}.brand{font-size:16px}.hero{padding:58px 0 42px}h1{font-size:49px;letter-spacing:-2px}.lead{font-size:16px}.visual{height:235px}.monogram{font-size:85px}.posts{grid-template-columns:1fr}.section-top{display:block}.about{padding:25px}.contact{padding:27px;align-items:flex-start;flex-direction:column}.foot{flex-direction:column}}
+:root{color-scheme:dark;--bg:#090909;--panel:#121212;--panel2:#191919;--text:#f4f4f0;--muted:#a4a49e;--line:#30302d;--accent:#e8e8df;--inverse:#101010;--shadow:#0008}
+[data-theme="light"]{color-scheme:light;--bg:#f4f4f0;--panel:#fff;--panel2:#eaeae5;--text:#171715;--muted:#62625d;--line:#d9d9d2;--accent:#1b1b18;--inverse:#f5f5f1;--shadow:#0001}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:"Hind Siliguri",sans-serif;transition:background .2s,color .2s}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+#readingBar{position:fixed;top:0;left:0;height:3px;background:var(--text);width:0;z-index:50}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font:800 18px "DM Sans";letter-spacing:-.7px}.brand span{color:var(--muted)}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--text)}.navtools{display:flex;gap:8px}.iconbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:8px 11px;cursor:pointer;border-radius:3px}
+.hero{padding:84px 0 70px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}.kicker,.overline{font:600 10px "DM Sans";letter-spacing:2.5px;color:var(--muted);text-transform:uppercase}.kicker:before{content:"";display:inline-block;width:30px;height:1px;background:var(--muted);vertical-align:middle;margin-right:10px}
+h1{font:800 clamp(44px,7vw,78px)/1.05 "DM Sans";letter-spacing:-3px;margin:22px 0}.bnhead{font:600 clamp(38px,6vw,66px)/1.2 "Hind Siliguri";color:var(--muted);letter-spacing:-1px}.lead{font-size:18px;line-height:1.9;color:var(--muted);max-width:610px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border:1px solid var(--text);border-radius:3px;font-weight:600;font-size:14px;cursor:pointer}.primary{background:var(--text);color:var(--inverse)}.secondary{color:var(--text);background:transparent}.btn:hover,.iconbtn:hover{opacity:.75}
+.hero-photo{height:390px;border:1px solid var(--line);overflow:hidden;position:relative}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:grayscale(100%)}.hero-photo span{position:absolute;bottom:18px;left:18px;font:500 10px "DM Sans";letter-spacing:2px;color:white;text-shadow:0 1px 5px #000}
+section{padding:44px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:23px}.section-title{font-size:30px;margin:6px 0 0}.section-desc{font-size:14px;color:var(--muted);margin:4px 0 0}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 20px}.field{background:var(--panel);color:var(--text);border:1px solid var(--line);padding:11px 13px;min-width:0;border-radius:3px}.search{flex:1;min-width:190px}.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.post{background:var(--panel);border:1px solid var(--line);transition:.2s}.post:hover{transform:translateY(-3px);border-color:var(--muted)}.post-art{height:135px;background:var(--panel2);display:grid;place-items:center;border-bottom:1px solid var(--line);font:700 11px "DM Sans";letter-spacing:2px;color:var(--muted)}.post-body{padding:18px}.tag{font:600 10px "DM Sans";letter-spacing:1.6px;color:var(--muted);text-transform:uppercase}.post h3{font-size:20px;line-height:1.4;margin:9px 0}.post p{color:var(--muted);font-size:14px;line-height:1.75}.post-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--muted);font:11px "DM Sans"}.textbtn{background:none;border:0;color:var(--text);cursor:pointer;text-decoration:underline;padding:4px}
+.portfolio{display:grid;grid-template-columns:1fr 1fr;gap:28px;border:1px solid var(--line);padding:30px;background:var(--panel)}.portfolio p{color:var(--muted);line-height:1.9}.skills{display:flex;gap:8px;flex-wrap:wrap}.skill{border:1px solid var(--line);padding:7px 11px;color:var(--muted);font-size:13px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gallery-item{height:220px;background:var(--panel);border:1px solid var(--line);padding:0;cursor:pointer;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%);transition:.3s}.gallery-item:hover img{transform:scale(1.04)}
+.panel{background:var(--panel);border:1px solid var(--line);padding:25px}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.stack{display:grid;gap:10px}.muted{color:var(--muted)}.notice{padding:12px 14px;border-left:2px solid var(--muted);background:var(--panel2);color:var(--muted);font-size:13px;line-height:1.7}
+.comment{border-top:1px solid var(--line);padding:13px 0}.comment strong{display:block}.comment small{color:var(--muted)}.comment p{margin:5px 0;color:var(--muted)}
+.contact{background:var(--text);color:var(--inverse);padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px}.contact p{margin:4px 0;color:color-mix(in srgb,var(--inverse) 70%,transparent)}.contact .btn{border-color:var(--inverse);color:var(--inverse)}
+footer{padding:25px 0;color:var(--muted);font-size:13px}.foot{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);width:min(520px,calc(100% - 24px));padding:24px}dialog::backdrop{background:#000b}.modal-head{display:flex;justify-content:space-between;align-items:center}.modal-close{background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
+.progress-label{font:11px "DM Sans";color:var(--muted)}.bookmark{background:none;border:0;color:var(--text);cursor:pointer;font-size:18px}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.admin-grid .wide{grid-column:1/-1}.hidden{display:none!important}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding:60px 0 45px}.hero-photo{height:310px}.posts{grid-template-columns:1fr 1fr}.navlinks{gap:11px;font-size:12px}.portfolio{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{width:calc(100% - 28px)}nav{height:auto;min-height:65px;flex-wrap:wrap;padding:10px 0}.navlinks{order:3;width:100%;overflow:auto;padding-bottom:5px}.navtools{margin-left:auto}.hero{padding-top:45px}h1{font-size:48px}.bnhead{font-size:39px}.lead{font-size:16px}.hero-photo{height:270px}.posts{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.gallery-item{height:155px}.section-head{align-items:start;flex-direction:column}.two,.admin-grid{grid-template-columns:1fr}.admin-grid .wide{grid-column:auto}.contact{align-items:start;flex-direction:column;padding:24px}}
 </style>
 </head>
 <body>
+<div id="readingBar"></div>
 <header><div class="wrap"><nav>
 <a class="brand" href="#home">YASIN<span>'S BLOG.</span></a>
-<div class="navlinks"><a href="#home">হোম / Home</a><a href="#blog">ব্লগ / Blog</a><a href="#gallery">গ্যালারি / Gallery</a><a href="#about">পরিচিতি / About</a><a href="#contact">যোগাযোগ / Contact</a></div>
+<div class="navlinks"><a href="#home">Home</a><a href="#blog">Blog</a><a href="#portfolio">Portfolio</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div>
+<div class="navtools"><button class="iconbtn" id="themeToggle" aria-label="Toggle theme">☼</button><button class="iconbtn" id="adminOpen">Admin</button></div>
 </nav></div></header>
-<main><div class="wrap">
-<section class="hero" id="home">
-<div>
-<div class="kicker">PERSONAL JOURNAL · 2026</div>
-<h1>Ideas. Stories.<br><span class="bn">আমার নিজের গল্প।</span></h1>
+<main class="wrap">
+<section class="hero" id="home"><div><div class="kicker">PERSONAL JOURNAL · 2026</div><h1>Ideas. Stories.<br><span class="bnhead">আমার নিজের গল্প।</span></h1>
 <p class="lead">স্বাগতম Yasin's Blog-এ। এখানে আমি শেয়ার করি আমার ভাবনা, অভিজ্ঞতা, শেখার গল্প এবং জীবনের ছোট ছোট মুহূর্ত। A personal space for thoughts, creativity and growth.</p>
-<div class="actions"><a class="btn primary" href="#blog">লেখা পড়ুন / Read stories ↗</a><a class="btn secondary" href="#about">আমার সম্পর্কে / About me</a></div>
-</div>
-<div class="visual profile-visual"><img src="yasin-profile.jpg" alt="Yasin's profile photo"><div class="visual-label">A PERSONAL SPACE BY YASIN</div></div>
-</section>
+<div class="actions"><a class="btn primary" href="#blog">লেখা পড়ুন / Read stories ↗</a><a class="btn secondary" href="#portfolio">আমার পরিচিতি / About me</a></div></div>
+<div class="hero-photo"><img src="yasin-profile.jpg" alt="Yasin profile photo"><span>A PERSONAL SPACE BY YASIN</span></div></section>
 
-<section class="section" id="blog">
-<div class="section-top"><div><div class="overline">THE JOURNAL</div><h2 class="section-title">সাম্প্রতিক লেখা / Latest Posts</h2><p class="section-desc">Thoughts, notes and stories from my journey.</p></div></div>
-<div class="posts">
-<article class="post"><div class="art"><span>01 — LIFE</span></div><div class="post-body"><div class="tag">জীবন · LIFE</div><h3>নতুন করে শুরু করার সাহস</h3><p>প্রতিটি সকাল নতুন সম্ভাবনা নিয়ে আসে। শুরুটা ছোট হলেও, এগিয়ে যাওয়াটাই সবচেয়ে গুরুত্বপূর্ণ।</p><div class="meta">NOV 09, 2026 · 3 MIN READ</div></div></article>
-<article class="post"><div class="art"><span>02 — THOUGHTS</span></div><div class="post-body"><div class="tag">ভাবনা · THOUGHTS</div><h3>ছোট ছোট স্বপ্নের গল্প</h3><p>বড় স্বপ্নের পথে প্রতিদিনের ছোট পদক্ষেপই একদিন বড় পরিবর্তনের কারণ হয়ে দাঁড়ায়।</p><div class="meta">NOV 05, 2026 · 2 MIN READ</div></div></article>
-<article class="post"><div class="art"><span>03 — GROWTH</span></div><div class="post-body"><div class="tag">শেখা · LEARNING</div><h3>প্রতিদিন একটু একটু উন্নতি</h3><p>নিজেকে গতকালের চেয়ে ভালো করার চেষ্টা—এই ধারাবাহিকতাই আমার কাছে সাফল্য।</p><div class="meta">NOV 01, 2026 · 4 MIN READ</div></div></article>
-</div>
-</section>
+<section id="blog"><div class="section-head"><div><div class="overline">THE JOURNAL</div><h2 class="section-title">সাম্প্রতিক লেখা / Latest Posts</h2><p class="section-desc">Search stories, filter categories and save your favourites.</p></div><span class="progress-label" id="bookmarkCount">0 saved</span></div>
+<div class="toolbar"><input class="field search" id="searchInput" placeholder="লেখা খুঁজুন / Search posts..."><select class="field" id="categoryFilter"><option value="all">সব ক্যাটাগরি / All categories</option><option>Life</option><option>Thoughts</option><option>Learning</option></select></div>
+<div class="posts" id="postsGrid"></div><p id="emptyPosts" class="muted hidden">কোনো লেখা পাওয়া যায়নি।</p></section>
 
-<section class="section" id="gallery">
-<div class="section-top"><div><div class="overline">PHOTO STORIES</div><h2 class="section-title">গ্যালারি / Gallery</h2><p class="section-desc">Moments from my life.</p></div></div>
-<div class="gallery-grid" id="galleryGrid">
-<figure class="gallery-item"><img src="yasin-profile.jpg" alt="Yasin outdoors"><figcaption>একটি দিনের গল্প · A day outside</figcaption></figure>
-</div>
-</section>
+<section id="portfolio"><div class="section-head"><div><div class="overline">ABOUT THE AUTHOR</div><h2 class="section-title">আমি Yasin. / I'm Yasin.</h2></div></div>
+<div class="portfolio"><div><p>আমি একজন শিক্ষার্থী, স্বপ্ন দেখি এবং প্রতিনিয়ত নতুন কিছু শেখার চেষ্টা করি। এই ওয়েবসাইট আমার চিন্তা, অভিজ্ঞতা, পছন্দ ও শেখার যাত্রা ভাগ করে নেওয়ার জায়গা।</p><p>My goal is to learn, create and document the journey—one step at a time.</p><a href="mailto:syedizhakurrahman@gmail.com" class="textbtn">Contact me ↗</a></div><div><h3>Interests & Skills</h3><div class="skills"><span class="skill">Learning</span><span class="skill">Writing</span><span class="skill">Technology</span><span class="skill">Creativity</span><span class="skill">Personal Growth</span></div><h3>Find me online</h3><div class="skills"><a class="skill" href="https://www.facebook.com/syed.izhakur.rahman" target="_blank" rel="noopener">Facebook ↗</a><a class="skill" href="https://www.instagram.com/izhakur_rahman" target="_blank" rel="noopener">Instagram ↗</a></div></div></div></section>
 
-<section class="section" id="about">
-<div class="about"><div><div class="overline">A LITTLE INTRODUCTION</div><h2>আমি Yasin. / I'm Yasin.</h2><p>আমি একজন শিক্ষার্থী, স্বপ্ন দেখি এবং প্রতিনিয়ত নতুন কিছু শেখার চেষ্টা করি। এই ব্লগটি আমার নিজস্ব জায়গা—যেখানে নিজের চিন্তা, পছন্দ, অভিজ্ঞতা ও শেখার যাত্রা লিখে রাখব। এখানে নিজের ছবি, পড়াশোনা, শখ ও লক্ষ্য সম্পর্কে আরও যোগ করতে পারো।</p></div>
-<div class="quote">“নিজের গল্প নিজেকেই লিখতে হয়। প্রতিদিনের ছোট প্রচেষ্টাই একদিন বড় গল্প হয়ে ওঠে।”<small>— A note to myself</small></div></div>
-</section>
+<section id="gallery"><div class="section-head"><div><div class="overline">PHOTO STORIES</div><h2 class="section-title">গ্যালারি / Gallery</h2><p class="section-desc">Tap a photo to view it larger.</p></div></div>
+<div class="gallery" id="galleryGrid"><button class="gallery-item" data-src="yasin-profile.jpg"><img src="yasin-profile.jpg" alt="Yasin outdoors"></button></div></section>
 
-<section class="section" id="contact"><div class="contact"><div><h2>চলো কথা বলি। / Let's connect.</h2><p>মতামত, প্রশ্ন বা যোগাযোগের জন্য ইমেইল করো।</p><div class="social-links"><a href="https://www.facebook.com/syed.izhakur.rahman" target="_blank" rel="noopener">Facebook ↗</a><a href="https://www.instagram.com/izhakur_rahman" target="_blank" rel="noopener">Instagram ↗</a></div></div><a class="btn" href="mailto:syedizhakurrahman@gmail.com">ইমেইল পাঠাও / Email me ↗</a></div></section>
+<section id="comments"><div class="section-head"><div><div class="overline">COMMUNITY</div><h2 class="section-title">মতামত / Comments</h2><p class="section-desc">Share your thoughts with Yasin.</p></div></div>
+<div class="two"><form class="panel stack" id="commentForm"><input class="field" name="name" placeholder="তোমার নাম / Your name" required maxlength="60"><textarea class="field" name="message" rows="4" placeholder="মন্তব্য লিখো / Write a comment..." required maxlength="1000"></textarea><button class="btn primary" type="submit">মন্তব্য পাঠাও / Submit</button><div class="notice" id="commentNotice">Backend configure না করা পর্যন্ত মন্তব্যগুলো অনলাইনে সংরক্ষিত হবে না।</div></form><div class="panel"><h3>সাম্প্রতিক মন্তব্য</h3><div id="commentsList"><p class="muted">এখনো কোনো অনুমোদিত মন্তব্য নেই।</p></div></div></div></section>
 
-<section class="section" id="share">
-<div class="share-row"><div><div class="overline">SPREAD THE WORD</div><h2 class="section-title">শেয়ার করো / Share this blog</h2></div>
-<div class="share-actions"><button class="mini-btn" onclick="shareTo('facebook')">Facebook</button><button class="mini-btn" onclick="shareTo('whatsapp')">WhatsApp</button><button class="mini-btn" onclick="copyBlogLink()">Copy link</button></div></div>
-</section>
+<section id="newsletter"><div class="panel two"><div><div class="overline">STAY IN TOUCH</div><h2 class="section-title">Newsletter</h2><p class="muted">নতুন লেখা প্রকাশ হলে ইমেইলে খবর পেতে সাবস্ক্রাইব করো।</p></div><form id="newsletterForm" class="stack"><input class="field" type="email" name="email" placeholder="তোমার ইমেইল / Email address" required><button class="btn primary" type="submit">Subscribe ↗</button><small class="muted" id="newsletterNotice">তোমার ইমেইল শুধু আপডেট পাঠানোর জন্য ব্যবহার হবে।</small></form></div></section>
 
-<section class="section" id="admin">
-<div class="admin-box">
-<div class="section-top"><div><div class="overline">OWNER TOOLS</div><h2 class="section-title">Admin Panel / লেখার নিয়ন্ত্রণ</h2><p class="section-desc">এই ব্রাউজারে পোস্ট ও গ্যালারি ম্যানেজ করো।</p></div></div>
-<p class="admin-warning">নোট: এই সহজ Admin Panel-এর পোস্ট ও আপলোড করা ছবি শুধু এই ডিভাইস/ব্রাউজারে সংরক্ষিত হয়। সবার ওয়েবসাইটে নতুন পোস্ট প্রকাশ করতে GitHub-এ ফাইল আপডেট করতে হবে। এটি নিরাপদ সার্ভার-ভিত্তিক লগইন নয়।</p>
-<div class="admin-form">
-<label>পোস্টের শিরোনাম / Title<input id="postTitle" placeholder="তোমার লেখার শিরোনাম"></label>
-<label>ক্যাটাগরি / Category<input id="postCategory" placeholder="জীবন · LIFE"></label>
-<label>লেখা / Content<textarea id="postContent" rows="4" placeholder="তোমার ব্লগ লেখাটি এখানে লিখো..."></textarea></label>
-<div class="admin-actions"><button class="mini-btn light" onclick="addPost()">পোস্ট সেভ করো / Save post</button><button class="mini-btn" onclick="exportPosts()">পোস্ট Export</button><label class="file-label">Import JSON<input type="file" accept="application/json" onchange="importPosts(event)"></label></div>
-<hr>
-<label>গ্যালারিতে ছবি যোগ করো / Add gallery photo<input type="file" id="galleryUpload" accept="image/*" multiple onchange="addGalleryImages(event)"></label>
-<div class="admin-actions"><button class="mini-btn" onclick="clearLocalData()">এই ব্রাউজারের সেভ করা ডেটা মুছুন</button></div>
-</div>
-</div>
-</section>
-</div></main>
-<footer><div class="wrap foot"><span>© 2026 YASIN'S BLOG. All rights reserved.</span><span>নিজের গল্প, নিজের ভাষায়। / Your story, your words.</span><span id="visitCount">এই ব্রাউজারে ভিজিট: ১</span></div></footer>
-<script>
-const defaultPosts = [
- {title:"নতুন করে শুরু করার সাহস",category:"জীবন · LIFE",content:"প্রতিটি সকাল নতুন সম্ভাবনা নিয়ে আসে। শুরুটা ছোট হলেও, এগিয়ে যাওয়াটাই সবচেয়ে গুরুত্বপূর্ণ।",date:"NOV 09, 2026"},
- {title:"ছোট ছোট স্বপ্নের গল্প",category:"ভাবনা · THOUGHTS",content:"বড় স্বপ্নের পথে প্রতিদিনের ছোট পদক্ষেপই একদিন বড় পরিবর্তনের কারণ হয়ে দাঁড়ায়।",date:"NOV 05, 2026"},
- {title:"প্রতিদিন একটু একটু উন্নতি",category:"শেখা · LEARNING",content:"নিজেকে গতকালের চেয়ে ভালো করার চেষ্টা—এই ধারাবাহিকতাই আমার কাছে সাফল্য।",date:"NOV 01, 2026"}
+<section id="analytics"><div class="section-head"><div><div class="overline">SITE INSIGHTS</div><h2 class="section-title">Visitor Analytics</h2><p class="section-desc">Global counts appear after Supabase setup.</p></div></div><div class="portfolio"><div><div class="overline">TOTAL PAGE VIEWS</div><h2 id="globalViews">—</h2><p class="muted">সকল ভিজিটরের মোট Page Views</p></div><div><div class="overline">YOUR LOCAL VIEWS</div><h2 id="localViews">0</h2><p class="muted">এই ব্রাউজারে দেখা পেজের সংখ্যা</p></div></div></section>
+
+<section id="contact"><div class="contact"><div><h2>চলো কথা বলি। / Let's connect.</h2><p>syedizhakurrahman@gmail.com</p></div><div class="actions"><a class="btn" href="mailto:syedizhakurrahman@gmail.com">Email me ↗</a><button class="btn" id="shareButton">Share blog ↗</button></div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 YASIN'S BLOG. All rights reserved.</span><span>নিজের গল্প, নিজের ভাষায়।</span><span id="footerViews">Personal Journal</span></div></footer>
+
+<dialog id="adminDialog"><div class="modal-head"><h2>Secure Admin Login</h2><button class="modal-close" data-close="adminDialog">×</button></div>
+<div id="loginPanel" class="stack"><p class="muted">Supabase configuration required. Admin access is protected by Supabase Auth and database policies.</p><input class="field" id="adminEmail" type="email" placeholder="Admin email"><input class="field" id="adminPassword" type="password" placeholder="Password"><button class="btn primary" id="loginButton">Login</button><small id="adminStatus" class="muted">প্রথমে config.js সেটআপ করতে হবে।</small></div>
+<div id="dashboardPanel" class="hidden stack"><h3>Dashboard</h3><div class="admin-grid"><input class="field" id="newTitle" placeholder="Post title"><input class="field" id="newCategory" placeholder="Category"><textarea class="field wide" id="newExcerpt" rows="2" placeholder="Excerpt"></textarea><textarea class="field wide" id="newBody" rows="6" placeholder="Full post content"></textarea></div><button class="btn primary" id="publishButton">Publish post</button><button class="btn secondary" id="logoutButton">Logout</button><p class="muted" id="dashboardStatus"></p></div>
+</dialog>
+<dialog id="photoDialog"><button class="modal-close" data-close="photoDialog" style="float:right">×</button><img id="largePhoto" alt="Gallery preview" style="width:100%;height:auto;max-height:75vh;object-fit:contain"></dialog>
+
+<script src="config.js"></script>
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+const cfg=window.YASIN_CONFIG||{};
+const configured=Boolean(cfg.SUPABASE_URL&&cfg.SUPABASE_ANON_KEY&&!cfg.SUPABASE_URL.includes("YOUR_")&&!cfg.SUPABASE_ANON_KEY.includes("YOUR_"));
+const supabase=configured?createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY):null;
+const defaults=[
+{id:"sample-1",title:"নতুন করে শুরু করার সাহস",category:"Life",excerpt:"প্রতিটি সকাল নতুন সম্ভাবনা নিয়ে আসে। শুরুটা ছোট হলেও, এগিয়ে যাওয়াটাই সবচেয়ে গুরুত্বপূর্ণ।",body:"প্রতিটি সকাল নতুন সম্ভাবনা নিয়ে আসে। শুরুটা ছোট হলেও, এগিয়ে যাওয়াটাই সবচেয়ে গুরুত্বপূর্ণ। নিজের লক্ষ্য ঠিক রেখে প্রতিদিন একটু একটু করে এগিয়ে যাওয়াই আসল কথা।",created_at:"2026-11-09"},
+{id:"sample-2",title:"ছোট ছোট স্বপ্নের গল্প",category:"Thoughts",excerpt:"বড় স্বপ্নের পথে প্রতিদিনের ছোট পদক্ষেপই একদিন বড় পরিবর্তনের কারণ হয়ে দাঁড়ায়।",body:"বড় স্বপ্নের পথে প্রতিদিনের ছোট পদক্ষেপই একদিন বড় পরিবর্তনের কারণ হয়ে দাঁড়ায়।",created_at:"2026-11-05"},
+{id:"sample-3",title:"প্রতিদিন একটু একটু উন্নতি",category:"Learning",excerpt:"নিজেকে গতকালের চেয়ে ভালো করার চেষ্টা—এই ধারাবাহিকতাই সাফল্য।",body:"নিজেকে গতকালের চেয়ে ভালো করার চেষ্টা—এই ধারাবাহিকতাই সাফল্য।",created_at:"2026-11-01"}
 ];
-function readPosts(){try{return JSON.parse(localStorage.getItem("yasinBlogPosts"))||defaultPosts}catch(e){return defaultPosts}}
-function renderPosts(){
- const root=document.querySelector(".posts"); if(!root)return;
- const posts=readPosts(); root.innerHTML="";
- posts.slice().reverse().forEach((p,i)=>{
-  const article=document.createElement("article");article.className="post";
-  const art=document.createElement("div");art.className="art";const span=document.createElement("span");span.textContent=String(i+1).padStart(2,"0")+" — YASIN";art.appendChild(span);
-  const body=document.createElement("div");body.className="post-body";
-  const tag=document.createElement("div");tag.className="tag";tag.textContent=p.category||"BLOG";
-  const h=document.createElement("h3");h.textContent=p.title;
-  const para=document.createElement("p");para.textContent=p.content;
-  const meta=document.createElement("div");meta.className="meta";meta.textContent=(p.date||new Date().toLocaleDateString())+" · YASIN'S BLOG";
-  body.append(tag,h,para,meta);article.append(art,body);root.appendChild(article);
- });
+let posts=defaults;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const saved=()=>JSON.parse(localStorage.getItem("yasinBookmarks")||"[]");
+function renderPosts(){const q=$("searchInput").value.toLowerCase().trim(),cat=$("categoryFilter").value;const shown=posts.filter(p=>(cat==="all"||p.category===cat)&&(`${p.title} ${p.excerpt} ${p.body}`.toLowerCase().includes(q)));$("postsGrid").innerHTML=shown.map(p=>`<article class="post"><div class="post-art">${esc((p.category||"BLOG").toUpperCase())}</div><div class="post-body"><div class="tag">${esc(p.category||"BLOG")}</div><h3>${esc(p.title)}</h3><p>${esc(p.excerpt||p.body||"")}</p><div class="post-foot"><span>${p.created_at?new Date(p.created_at).toLocaleDateString():"YASIN'S BLOG"}</span><span><button class="textbtn" data-read="${esc(p.id)}">Read ↗</button><button class="bookmark" title="Bookmark" data-bookmark="${esc(p.id)}">${saved().includes(p.id)?"★":"☆"}</button></span></div></div></article>`).join("");$("emptyPosts").classList.toggle("hidden",shown.length>0);$("bookmarkCount").textContent=saved().length+" saved"}
+function refreshBookmarkCount(){ $("bookmarkCount").textContent=saved().length+" saved"; }
+$("searchInput").addEventListener("input",renderPosts);$("categoryFilter").addEventListener("change",renderPosts);
+$("postsGrid").addEventListener("click",e=>{const b=e.target.closest("[data-bookmark]");if(b){const id=b.dataset.bookmark,a=saved(),n=a.includes(id)?a.filter(x=>x!==id):[...a,id];localStorage.setItem("yasinBookmarks",JSON.stringify(n));renderPosts();return}const r=e.target.closest("[data-read]");if(r){const p=posts.find(x=>x.id===r.dataset.read);if(p)alert(p.title+"\\n\\n"+(p.body||p.excerpt));}});
+const theme=localStorage.getItem("yasinTheme")||"dark";document.documentElement.dataset.theme=theme;$("themeToggle").textContent=theme==="dark"?"☼":"☾";$("themeToggle").onclick=()=>{const t=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=t;localStorage.setItem("yasinTheme",t);$("themeToggle").textContent=t==="dark"?"☼":"☾"};
+window.addEventListener("scroll",()=>{const d=document.documentElement,max=d.scrollHeight-d.clientHeight;$("readingBar").style.width=(max>0?d.scrollTop/max*100:0)+"%"});
+document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>$(b.dataset.close).close());
+$("adminOpen").onclick=()=>{$("adminDialog").showModal()};
+$("galleryGrid").addEventListener("click",e=>{const b=e.target.closest("[data-src]");if(b){$("largePhoto").src=b.dataset.src;$("photoDialog").showModal()}});
+$("shareButton").onclick=async()=>{if(navigator.share){try{await navigator.share({title:"Yasin's Blog",url:location.href})}catch(e){}}else{await navigator.clipboard.writeText(location.href);alert("লিংক কপি হয়েছে।")}};
+const localKey="yasinLocalPageViews";let local=Number(localStorage.getItem(localKey)||0)+1;localStorage.setItem(localKey,local);$("localViews").textContent=local;
+async function loadBackend(){
+ if(!supabase){$("commentNotice").textContent="Backend এখনো configure করা হয়নি। Setup guide অনুসরণ করে config.js পূরণ করো।";$("newsletterNotice").textContent="Newsletter চালু করতে Supabase configuration প্রয়োজন।";return}
+ const {error:pvError}=await supabase.from("page_views").insert({path:location.pathname});const {data:viewCount,error:viewError}=await supabase.rpc("get_public_page_view_count");$("globalViews").textContent=viewError?"—":(viewCount??"0");
+ const {data:p}=await supabase.from("posts").select("*").eq("published",true).order("created_at",{ascending:false});if(p?.length){posts=p;renderPosts()}
+ const {data:c}=await supabase.from("comments").select("name,message,created_at").eq("approved",true).order("created_at",{ascending:false}).limit(20);if(c?.length){$("commentsList").innerHTML=c.map(x=>`<div class="comment"><strong>${esc(x.name)}</strong><small>${new Date(x.created_at).toLocaleString()}</small><p>${esc(x.message)}</p></div>`).join("")}
+ $("commentNotice").textContent="মন্তব্য জমা দিলে moderation-এর পর প্রকাশিত হবে।";$("newsletterNotice").textContent="সাবস্ক্রিপশন নিশ্চিত করতে ইমেইল ঠিকানা দাও।";
 }
-function addPost(){
- const title=document.getElementById("postTitle").value.trim(),category=document.getElementById("postCategory").value.trim(),content=document.getElementById("postContent").value.trim();
- if(!title||!content){alert("শিরোনাম ও লেখা দুটোই দাও।");return}
- const posts=readPosts();posts.push({title,category:category||"BLOG",content,date:new Date().toLocaleDateString("en-GB")});
- localStorage.setItem("yasinBlogPosts",JSON.stringify(posts));renderPosts();
- document.getElementById("postTitle").value="";document.getElementById("postCategory").value="";document.getElementById("postContent").value="";
- alert("এই ব্রাউজারে পোস্ট সেভ হয়েছে। পাবলিক সাইটে দেখাতে GitHub-এ আপডেট করতে হবে।");
-}
-function exportPosts(){const blob=new Blob([JSON.stringify(readPosts(),null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="yasin-blog-posts.json";a.click();URL.revokeObjectURL(a.href)}
-function importPosts(ev){const file=ev.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const data=JSON.parse(reader.result);if(!Array.isArray(data))throw Error();localStorage.setItem("yasinBlogPosts",JSON.stringify(data));renderPosts();alert("পোস্ট Import হয়েছে।")}catch(e){alert("JSON ফাইলটি সঠিক নয়।")}};reader.readAsText(file)}
-function addGalleryImages(ev){
- const files=Array.from(ev.target.files||[]);const grid=document.getElementById("galleryGrid");
- files.forEach(file=>{if(!file.type.startsWith("image/"))return;const reader=new FileReader();reader.onload=()=>{try{const stored=JSON.parse(localStorage.getItem("yasinGallery")||"[]");stored.push({src:reader.result,name:file.name});localStorage.setItem("yasinGallery",JSON.stringify(stored));renderGallery()}catch(e){alert("ছবির স্টোরেজ পূর্ণ হয়েছে। ছোট ছবি ব্যবহার করো।")}};reader.readAsDataURL(file)});
-}
-function renderGallery(){const grid=document.getElementById("galleryGrid");if(!grid)return;const stored=JSON.parse(localStorage.getItem("yasinGallery")||"[]");grid.querySelectorAll(".uploaded-gallery").forEach(x=>x.remove());stored.forEach(item=>{const f=document.createElement("figure");f.className="gallery-item uploaded-gallery";const im=document.createElement("img");im.src=item.src;im.alt=item.name||"Gallery photo";const cap=document.createElement("figcaption");cap.textContent=item.name||"My photo";f.append(im,cap);grid.appendChild(f)})}
-function shareTo(where){const url=encodeURIComponent(location.href),title=encodeURIComponent("Yasin's Blog");const target=where==="facebook"?"https://www.facebook.com/sharer/sharer.php?u="+url:"https://wa.me/?text="+title+"%20"+url;window.open(target,"_blank","noopener")}
-function copyBlogLink(){if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(()=>alert("লিংক কপি হয়েছে।"))}else{prompt("এই লিংকটি কপি করো:",location.href)}}
-function clearLocalData(){if(confirm("এই ব্রাউজারে সেভ করা পোস্ট ও গ্যালারি মুছে ফেলবে?")){localStorage.removeItem("yasinBlogPosts");localStorage.removeItem("yasinGallery");renderPosts();renderGallery()}}
-function visitCounter(){const key="yasinLocalVisits";let n=Number(localStorage.getItem(key)||0)+1;localStorage.setItem(key,n);const el=document.getElementById("visitCount");if(el)el.textContent="এই ব্রাউজারে ভিজিট: "+n}
-renderPosts();renderGallery();visitCounter();
+$("commentForm").onsubmit=async e=>{e.preventDefault();if(!supabase){$("commentNotice").textContent="মন্তব্য অনলাইনে পাঠাতে Supabase config প্রয়োজন।";return}const f=new FormData(e.target);const {error}=await supabase.from("comments").insert({name:f.get("name"),message:f.get("message")});$("commentNotice").textContent=error?"মন্তব্য পাঠানো যায়নি। পরে চেষ্টা করো।":"ধন্যবাদ! মন্তব্যটি moderation-এর জন্য পাঠানো হয়েছে।";if(!error)e.target.reset()};
+$("newsletterForm").onsubmit=async e=>{e.preventDefault();if(!supabase){$("newsletterNotice").textContent="Newsletter backend configure করা হয়নি।";return}const f=new FormData(e.target);const {error}=await supabase.from("subscribers").insert({email:f.get("email")});$("newsletterNotice").textContent=error?(error.code==="23505"?"এই ইমেইল আগে থেকেই subscribed।":"Subscription সম্পন্ন হয়নি।"):"সাবস্ক্রাইব করার জন্য ধন্যবাদ!";if(!error)e.target.reset()};
+$("loginButton").onclick=async()=>{if(!supabase){$("adminStatus").textContent="config.js-এ Supabase URL ও anon key বসাও।";return}const {error}=await supabase.auth.signInWithPassword({email:$("adminEmail").value,password:$("adminPassword").value});$("adminStatus").textContent=error?"Login ব্যর্থ। তথ্য যাচাই করো।":"Login successful.";if(!error){$("loginPanel").classList.add("hidden");$("dashboardPanel").classList.remove("hidden")}};
+$("logoutButton").onclick=async()=>{await supabase?.auth.signOut();$("dashboardPanel").classList.add("hidden");$("loginPanel").classList.remove("hidden")};
+$("publishButton").onclick=async()=>{if(!supabase)return;const {data:{user}}=await supabase.auth.getUser();if(!user){$("dashboardStatus").textContent="আগে Login করো।";return}const payload={title:$("newTitle").value,category:$("newCategory").value||"Life",excerpt:$("newExcerpt").value,body:$("newBody").value,published:true,author_id:user.id};const {error}=await supabase.from("posts").insert(payload);$("dashboardStatus").textContent=error?"Publish ব্যর্থ। Admin permission ও SQL policy যাচাই করো।":"Post published!";if(!error){$("newTitle").value=$("newCategory").value=$("newExcerpt").value=$("newBody").value="";const {data}=await supabase.from("posts").select("*").eq("published",true).order("created_at",{ascending:false});posts=data||posts;renderPosts()}};
+renderPosts();loadBackend();
 </script>
 </body></html>
