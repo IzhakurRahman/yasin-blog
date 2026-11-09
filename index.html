@@ -18,7 +18,7 @@ h1{font:700 clamp(48px,7vw,82px)/1.04 "DM Sans","Hind Siliguri",sans-serif;lette
 .lead{font-size:18px;line-height:1.9;color:#aaa;max-width:600px}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 21px;border:1px solid #eee;border-radius:3px;font-size:14px;font-weight:600;transition:.2s}.primary{background:#f1f1ed;color:#090909}.secondary{color:#eee;border-color:#555}.btn:hover{transform:translateY(-2px);background:#ccc;color:#090909;border-color:#ccc}
 .visual{height:365px;background:linear-gradient(145deg,#1b1b1b,#090909);border:1px solid #303030;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .profile-visual img{width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:grayscale(100%) contrast(1.04);display:block}
-.profile-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#0009);pointer-events:none}
+.profile-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#0009);pointer-events:none}.profile-visual:before,.profile-visual:after{display:none}
 .visual:before,.visual:after{content:"";position:absolute;border:1px solid #383838;border-radius:50%;width:290px;height:290px}.visual:after{width:220px;height:220px}
 .monogram{font:800 104px "DM Sans",sans-serif;letter-spacing:-10px;color:#eee;z-index:1}.visual-label{position:absolute;bottom:22px;left:24px;font:500 10px "DM Sans",sans-serif;letter-spacing:2px;color:#888}
 .section{padding:48px 0 62px}.section-top{display:flex;align-items:end;justify-content:space-between;margin-bottom:25px}.overline{font:600 10px "DM Sans",sans-serif;letter-spacing:2.5px;color:#858581;text-transform:uppercase}.section-title{font-size:31px;margin:7px 0 0}.section-desc{color:#858581;font-size:14px;margin:4px 0 0}
@@ -27,15 +27,17 @@ h1{font:700 clamp(48px,7vw,82px)/1.04 "DM Sans","Hind Siliguri",sans-serif;lette
 .post:nth-child(2) .art{background:#1b1b1b}.post:nth-child(3) .art{background:#141414}.post-body{padding:21px}.tag{font:600 10px "DM Sans",sans-serif;letter-spacing:1.8px;text-transform:uppercase;color:#aaa}.post h3{font-size:21px;line-height:1.45;margin:10px 0}.post p{font-size:14px;line-height:1.8;color:#999;margin:0 0 17px}.meta{font:11px "DM Sans",sans-serif;color:#777}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:45px;padding:37px;border:1px solid var(--line);background:#101010}.about h2{font-size:31px;margin:8px 0 13px}.about p{font-size:16px;line-height:1.9;color:#aaa;margin:0}.quote{font:500 24px/1.55 "DM Sans","Hind Siliguri",sans-serif;color:#e6e6e2;border-left:1px solid #777;padding:10px 0 10px 25px;align-self:center}.quote small{display:block;font:14px "Hind Siliguri",sans-serif;color:#888;margin-top:12px}
 .contact{padding:35px 38px;background:#eee;color:#111;display:flex;justify-content:space-between;align-items:center;gap:25px}.contact h2{font-size:29px;margin:0 0 5px}.contact p{margin:0;color:#555}.contact .btn{border-color:#111;background:#111;color:#fff;white-space:nowrap}.contact .btn:hover{background:#444}
-footer{padding:28px 0;color:#777;font-size:13px}.foot{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:15px}
+footer{padding:28px 0;color:#777;font-size:13px}.foot{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.gallery-item{margin:0;background:#111;border:1px solid var(--line)}.gallery-item img{width:100%;height:230px;object-fit:cover;filter:grayscale(100%);display:block}.gallery-item figcaption{padding:12px;color:#aaa;font-size:13px}
+.social-links{display:flex;gap:18px;margin-top:16px}.social-links a{color:#222;text-decoration:underline;font-weight:700}.share-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.share-actions,.admin-actions{display:flex;gap:10px;flex-wrap:wrap}.mini-btn,.file-label{background:#171717;color:#eee;border:1px solid #555;padding:10px 15px;border-radius:3px;font:600 13px "Hind Siliguri",sans-serif;cursor:pointer}.mini-btn:hover,.file-label:hover{background:#333}.admin-box{border:1px solid #333;background:#101010;padding:28px}.admin-warning{background:#1b1b1b;border-left:3px solid #aaa;padding:13px 16px;color:#aaa;font-size:13px;line-height:1.7}.admin-form{display:grid;gap:15px}.admin-form label{display:grid;gap:7px;color:#bbb;font-size:14px}.admin-form input,.admin-form textarea{width:100%;background:#080808;color:#eee;border:1px solid #444;padding:12px;font:14px "Hind Siliguri",sans-serif;border-radius:3px}.admin-form input[type=file]{padding:8px}.admin-form hr{width:100%;border:0;border-top:1px solid #333}.file-label input{display:block;max-width:100%;margin-top:8px}.light{background:#eee;color:#111;border-color:#eee}
 @media(max-width:800px){.hero{grid-template-columns:1fr;padding:75px 0 55px;gap:35px}.visual{height:280px}.posts{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr;gap:25px}}
-@media(max-width:560px){.wrap{width:calc(100% - 30px)}nav{height:66px}.navlinks{gap:12px;font-size:12px}.brand{font-size:16px}.hero{padding:58px 0 42px}h1{font-size:49px;letter-spacing:-2px}.lead{font-size:16px}.visual{height:235px}.monogram{font-size:85px}.posts{grid-template-columns:1fr}.section-top{display:block}.about{padding:25px}.contact{padding:27px;align-items:flex-start;flex-direction:column}.foot{flex-direction:column}}
+@media(max-width:560px){.gallery-grid{grid-template-columns:1fr 1fr}.gallery-item img{height:155px}.admin-box{padding:18px}.wrap{width:calc(100% - 30px)}nav{height:66px}.navlinks{gap:12px;font-size:12px}.brand{font-size:16px}.hero{padding:58px 0 42px}h1{font-size:49px;letter-spacing:-2px}.lead{font-size:16px}.visual{height:235px}.monogram{font-size:85px}.posts{grid-template-columns:1fr}.section-top{display:block}.about{padding:25px}.contact{padding:27px;align-items:flex-start;flex-direction:column}.foot{flex-direction:column}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav>
 <a class="brand" href="#home">YASIN<span>'S BLOG.</span></a>
-<div class="navlinks"><a href="#home">হোম / Home</a><a href="#blog">ব্লগ / Blog</a><a href="#about">পরিচিতি / About</a><a href="#contact">যোগাযোগ / Contact</a></div>
+<div class="navlinks"><a href="#home">হোম / Home</a><a href="#blog">ব্লগ / Blog</a><a href="#gallery">গ্যালারি / Gallery</a><a href="#about">পরিচিতি / About</a><a href="#contact">যোগাযোগ / Contact</a></div>
 </nav></div></header>
 <main><div class="wrap">
 <section class="hero" id="home">
@@ -57,12 +59,82 @@ footer{padding:28px 0;color:#777;font-size:13px}.foot{border-top:1px solid var(-
 </div>
 </section>
 
+<section class="section" id="gallery">
+<div class="section-top"><div><div class="overline">PHOTO STORIES</div><h2 class="section-title">গ্যালারি / Gallery</h2><p class="section-desc">Moments from my life.</p></div></div>
+<div class="gallery-grid" id="galleryGrid">
+<figure class="gallery-item"><img src="yasin-profile.jpg" alt="Yasin outdoors"><figcaption>একটি দিনের গল্প · A day outside</figcaption></figure>
+</div>
+</section>
+
 <section class="section" id="about">
 <div class="about"><div><div class="overline">A LITTLE INTRODUCTION</div><h2>আমি Yasin. / I'm Yasin.</h2><p>আমি একজন শিক্ষার্থী, স্বপ্ন দেখি এবং প্রতিনিয়ত নতুন কিছু শেখার চেষ্টা করি। এই ব্লগটি আমার নিজস্ব জায়গা—যেখানে নিজের চিন্তা, পছন্দ, অভিজ্ঞতা ও শেখার যাত্রা লিখে রাখব। এখানে নিজের ছবি, পড়াশোনা, শখ ও লক্ষ্য সম্পর্কে আরও যোগ করতে পারো।</p></div>
 <div class="quote">“নিজের গল্প নিজেকেই লিখতে হয়। প্রতিদিনের ছোট প্রচেষ্টাই একদিন বড় গল্প হয়ে ওঠে।”<small>— A note to myself</small></div></div>
 </section>
 
-<section class="section" id="contact"><div class="contact"><div><h2>চলো কথা বলি। / Let's connect.</h2><p>মতামত, প্রশ্ন বা যোগাযোগের জন্য ইমেইল করো।</p></div><a class="btn" href="mailto:syedizhakurrahman@gmail.com">ইমেইল পাঠাও / Email me ↗</a></div></section>
+<section class="section" id="contact"><div class="contact"><div><h2>চলো কথা বলি। / Let's connect.</h2><p>মতামত, প্রশ্ন বা যোগাযোগের জন্য ইমেইল করো।</p><div class="social-links"><a href="https://www.facebook.com/syed.izhakur.rahman" target="_blank" rel="noopener">Facebook ↗</a><a href="https://www.instagram.com/izhakur_rahman" target="_blank" rel="noopener">Instagram ↗</a></div></div><a class="btn" href="mailto:syedizhakurrahman@gmail.com">ইমেইল পাঠাও / Email me ↗</a></div></section>
+
+<section class="section" id="share">
+<div class="share-row"><div><div class="overline">SPREAD THE WORD</div><h2 class="section-title">শেয়ার করো / Share this blog</h2></div>
+<div class="share-actions"><button class="mini-btn" onclick="shareTo('facebook')">Facebook</button><button class="mini-btn" onclick="shareTo('whatsapp')">WhatsApp</button><button class="mini-btn" onclick="copyBlogLink()">Copy link</button></div></div>
+</section>
+
+<section class="section" id="admin">
+<div class="admin-box">
+<div class="section-top"><div><div class="overline">OWNER TOOLS</div><h2 class="section-title">Admin Panel / লেখার নিয়ন্ত্রণ</h2><p class="section-desc">এই ব্রাউজারে পোস্ট ও গ্যালারি ম্যানেজ করো।</p></div></div>
+<p class="admin-warning">নোট: এই সহজ Admin Panel-এর পোস্ট ও আপলোড করা ছবি শুধু এই ডিভাইস/ব্রাউজারে সংরক্ষিত হয়। সবার ওয়েবসাইটে নতুন পোস্ট প্রকাশ করতে GitHub-এ ফাইল আপডেট করতে হবে। এটি নিরাপদ সার্ভার-ভিত্তিক লগইন নয়।</p>
+<div class="admin-form">
+<label>পোস্টের শিরোনাম / Title<input id="postTitle" placeholder="তোমার লেখার শিরোনাম"></label>
+<label>ক্যাটাগরি / Category<input id="postCategory" placeholder="জীবন · LIFE"></label>
+<label>লেখা / Content<textarea id="postContent" rows="4" placeholder="তোমার ব্লগ লেখাটি এখানে লিখো..."></textarea></label>
+<div class="admin-actions"><button class="mini-btn light" onclick="addPost()">পোস্ট সেভ করো / Save post</button><button class="mini-btn" onclick="exportPosts()">পোস্ট Export</button><label class="file-label">Import JSON<input type="file" accept="application/json" onchange="importPosts(event)"></label></div>
+<hr>
+<label>গ্যালারিতে ছবি যোগ করো / Add gallery photo<input type="file" id="galleryUpload" accept="image/*" multiple onchange="addGalleryImages(event)"></label>
+<div class="admin-actions"><button class="mini-btn" onclick="clearLocalData()">এই ব্রাউজারের সেভ করা ডেটা মুছুন</button></div>
+</div>
+</div>
+</section>
 </div></main>
-<footer><div class="wrap foot"><span>© 2026 YASIN'S BLOG. All rights reserved.</span><span>নিজের গল্প, নিজের ভাষায়। / Your story, your words.</span></div></footer>
+<footer><div class="wrap foot"><span>© 2026 YASIN'S BLOG. All rights reserved.</span><span>নিজের গল্প, নিজের ভাষায়। / Your story, your words.</span><span id="visitCount">এই ব্রাউজারে ভিজিট: ১</span></div></footer>
+<script>
+const defaultPosts = [
+ {title:"নতুন করে শুরু করার সাহস",category:"জীবন · LIFE",content:"প্রতিটি সকাল নতুন সম্ভাবনা নিয়ে আসে। শুরুটা ছোট হলেও, এগিয়ে যাওয়াটাই সবচেয়ে গুরুত্বপূর্ণ।",date:"NOV 09, 2026"},
+ {title:"ছোট ছোট স্বপ্নের গল্প",category:"ভাবনা · THOUGHTS",content:"বড় স্বপ্নের পথে প্রতিদিনের ছোট পদক্ষেপই একদিন বড় পরিবর্তনের কারণ হয়ে দাঁড়ায়।",date:"NOV 05, 2026"},
+ {title:"প্রতিদিন একটু একটু উন্নতি",category:"শেখা · LEARNING",content:"নিজেকে গতকালের চেয়ে ভালো করার চেষ্টা—এই ধারাবাহিকতাই আমার কাছে সাফল্য।",date:"NOV 01, 2026"}
+];
+function readPosts(){try{return JSON.parse(localStorage.getItem("yasinBlogPosts"))||defaultPosts}catch(e){return defaultPosts}}
+function renderPosts(){
+ const root=document.querySelector(".posts"); if(!root)return;
+ const posts=readPosts(); root.innerHTML="";
+ posts.slice().reverse().forEach((p,i)=>{
+  const article=document.createElement("article");article.className="post";
+  const art=document.createElement("div");art.className="art";const span=document.createElement("span");span.textContent=String(i+1).padStart(2,"0")+" — YASIN";art.appendChild(span);
+  const body=document.createElement("div");body.className="post-body";
+  const tag=document.createElement("div");tag.className="tag";tag.textContent=p.category||"BLOG";
+  const h=document.createElement("h3");h.textContent=p.title;
+  const para=document.createElement("p");para.textContent=p.content;
+  const meta=document.createElement("div");meta.className="meta";meta.textContent=(p.date||new Date().toLocaleDateString())+" · YASIN'S BLOG";
+  body.append(tag,h,para,meta);article.append(art,body);root.appendChild(article);
+ });
+}
+function addPost(){
+ const title=document.getElementById("postTitle").value.trim(),category=document.getElementById("postCategory").value.trim(),content=document.getElementById("postContent").value.trim();
+ if(!title||!content){alert("শিরোনাম ও লেখা দুটোই দাও।");return}
+ const posts=readPosts();posts.push({title,category:category||"BLOG",content,date:new Date().toLocaleDateString("en-GB")});
+ localStorage.setItem("yasinBlogPosts",JSON.stringify(posts));renderPosts();
+ document.getElementById("postTitle").value="";document.getElementById("postCategory").value="";document.getElementById("postContent").value="";
+ alert("এই ব্রাউজারে পোস্ট সেভ হয়েছে। পাবলিক সাইটে দেখাতে GitHub-এ আপডেট করতে হবে।");
+}
+function exportPosts(){const blob=new Blob([JSON.stringify(readPosts(),null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="yasin-blog-posts.json";a.click();URL.revokeObjectURL(a.href)}
+function importPosts(ev){const file=ev.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const data=JSON.parse(reader.result);if(!Array.isArray(data))throw Error();localStorage.setItem("yasinBlogPosts",JSON.stringify(data));renderPosts();alert("পোস্ট Import হয়েছে।")}catch(e){alert("JSON ফাইলটি সঠিক নয়।")}};reader.readAsText(file)}
+function addGalleryImages(ev){
+ const files=Array.from(ev.target.files||[]);const grid=document.getElementById("galleryGrid");
+ files.forEach(file=>{if(!file.type.startsWith("image/"))return;const reader=new FileReader();reader.onload=()=>{try{const stored=JSON.parse(localStorage.getItem("yasinGallery")||"[]");stored.push({src:reader.result,name:file.name});localStorage.setItem("yasinGallery",JSON.stringify(stored));renderGallery()}catch(e){alert("ছবির স্টোরেজ পূর্ণ হয়েছে। ছোট ছবি ব্যবহার করো।")}};reader.readAsDataURL(file)});
+}
+function renderGallery(){const grid=document.getElementById("galleryGrid");if(!grid)return;const stored=JSON.parse(localStorage.getItem("yasinGallery")||"[]");grid.querySelectorAll(".uploaded-gallery").forEach(x=>x.remove());stored.forEach(item=>{const f=document.createElement("figure");f.className="gallery-item uploaded-gallery";const im=document.createElement("img");im.src=item.src;im.alt=item.name||"Gallery photo";const cap=document.createElement("figcaption");cap.textContent=item.name||"My photo";f.append(im,cap);grid.appendChild(f)})}
+function shareTo(where){const url=encodeURIComponent(location.href),title=encodeURIComponent("Yasin's Blog");const target=where==="facebook"?"https://www.facebook.com/sharer/sharer.php?u="+url:"https://wa.me/?text="+title+"%20"+url;window.open(target,"_blank","noopener")}
+function copyBlogLink(){if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(()=>alert("লিংক কপি হয়েছে।"))}else{prompt("এই লিংকটি কপি করো:",location.href)}}
+function clearLocalData(){if(confirm("এই ব্রাউজারে সেভ করা পোস্ট ও গ্যালারি মুছে ফেলবে?")){localStorage.removeItem("yasinBlogPosts");localStorage.removeItem("yasinGallery");renderPosts();renderGallery()}}
+function visitCounter(){const key="yasinLocalVisits";let n=Number(localStorage.getItem(key)||0)+1;localStorage.setItem(key,n);const el=document.getElementById("visitCount");if(el)el.textContent="এই ব্রাউজারে ভিজিট: "+n}
+renderPosts();renderGallery();visitCounter();
+</script>
 </body></html>
