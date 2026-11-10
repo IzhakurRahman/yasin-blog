@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Welcome to Yasin's Blog — a personal space for sharing thoughts, life experiences, stories, ideas, and creativity by Yasin.">
+<meta name="theme-color" content="#6d5dfc">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website"><meta property="og:title" content="Yasin’s Blog | Ideas, Stories & Growth"><meta property="og:description" content="A personal space for thoughts, stories, creativity and growth."><meta property="og:image" content="https://izhakurrahman.github.io/yasin-blog/yasin-profile.jpg"><meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://izhakurrahman.github.io/yasin-blog/">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Yasin's Blog | Personal Blog, Stories & Ideas</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Yasin","url":"https://izhakurrahman.github.io/yasin-blog/","image":"yasin-profile.jpg","sameAs":["https://www.facebook.com/syed.izhakur.rahman","https://www.instagram.com/izhakur_rahman"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#090909;--panel:#121212;--panel2:#191919;--text:#f4f4f0;--muted:#a4a49e;--line:#30302d;--accent:#e8e8df;--inverse:#101010;--shadow:#0008}
+[data-theme="light"]{color-scheme:light;--bg:#f4f4f0;--panel:#fff;--panel2:#eaeae5;--text:#171715;--muted:#62625d;--line:#d9d9d2;--accent:#1b1b18;--inverse:#f5f5f1;--shadow:#0001}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:"Hind Siliguri",sans-serif;transition:background .2s,color .2s}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+#readingBar{position:fixed;top:0;left:0;height:3px;background:var(--text);width:0;z-index:50}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font:800 18px "DM Sans";letter-spacing:-.7px}.brand span{color:var(--muted)}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--text)}.navtools{display:flex;gap:8px}.iconbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:8px 11px;cursor:pointer;border-radius:3px}
+.hero{padding:84px 0 70px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}.kicker,.overline{font:600 10px "DM Sans";letter-spacing:2.5px;color:var(--muted);text-transform:uppercase}.kicker:before{content:"";display:inline-block;width:30px;height:1px;background:var(--muted);vertical-align:middle;margin-right:10px}
+h1{font:800 clamp(44px,7vw,78px)/1.05 "DM Sans";letter-spacing:-3px;margin:22px 0}.bnhead{font:600 clamp(38px,6vw,66px)/1.2 "Hind Siliguri";color:var(--muted);letter-spacing:-1px}.lead{font-size:18px;line-height:1.9;color:var(--muted);max-width:610px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border:1px solid var(--text);border-radius:3px;font-weight:600;font-size:14px;cursor:pointer}.primary{background:var(--text);color:var(--inverse)}.secondary{color:var(--text);background:transparent}.btn:hover,.iconbtn:hover{opacity:.75}
+.hero-photo{height:390px;border:1px solid var(--line);overflow:hidden;position:relative}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:grayscale(100%)}.hero-photo span{position:absolute;bottom:18px;left:18px;font:500 10px "DM Sans";letter-spacing:2px;color:white;text-shadow:0 1px 5px #000}
+section{padding:44px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:23px}.section-title{font-size:30px;margin:6px 0 0}.section-desc{font-size:14px;color:var(--muted);margin:4px 0 0}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 20px}.field{background:var(--panel);color:var(--text);border:1px solid var(--line);padding:11px 13px;min-width:0;border-radius:3px}.search{flex:1;min-width:190px}.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.post{background:var(--panel);border:1px solid var(--line);transition:.2s}.post:hover{transform:translateY(-3px);border-color:var(--muted)}.post-art{height:135px;background:var(--panel2);display:grid;place-items:center;border-bottom:1px solid var(--line);font:700 11px "DM Sans";letter-spacing:2px;color:var(--muted)}.post-body{padding:18px}.tag{font:600 10px "DM Sans";letter-spacing:1.6px;color:var(--muted);text-transform:uppercase}.post h3{font-size:20px;line-height:1.4;margin:9px 0}.post p{color:var(--muted);font-size:14px;line-height:1.75}.post-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--muted);font:11px "DM Sans"}.textbtn{background:none;border:0;color:var(--text);cursor:pointer;text-decoration:underline;padding:4px}
+.portfolio{display:grid;grid-template-columns:1fr 1fr;gap:28px;border:1px solid var(--line);padding:30px;background:var(--panel)}.portfolio p{color:var(--muted);line-height:1.9}.skills{display:flex;gap:8px;flex-wrap:wrap}.skill{border:1px solid var(--line);padding:7px 11px;color:var(--muted);font-size:13px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gallery-item{height:220px;background:var(--panel);border:1px solid var(--line);padding:0;cursor:pointer;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%);transition:.3s}.gallery-item:hover img{transform:scale(1.04)}
+.panel{background:var(--panel);border:1px solid var(--line);padding:25px}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.stack{display:grid;gap:10px}.muted{color:var(--muted)}.notice{padding:12px 14px;border-left:2px solid var(--muted);background:var(--panel2);color:var(--muted);font-size:13px;line-height:1.7}
+.comment{border-top:1px solid var(--line);padding:13px 0}.comment strong{display:block}.comment small{color:var(--muted)}.comment p{margin:5px 0;color:var(--muted)}
+.contact{background:var(--text);color:var(--inverse);padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px}.contact p{margin:4px 0;color:color-mix(in srgb,var(--inverse) 70%,transparent)}.contact .btn{border-color:var(--inverse);color:var(--inverse)}
+footer{padding:25px 0;color:var(--muted);font-size:13px}.foot{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);width:min(520px,calc(100% - 24px));padding:24px}dialog::backdrop{background:#000b}.modal-head{display:flex;justify-content:space-between;align-items:center}.modal-close{background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
+.progress-label{font:11px "DM Sans";color:var(--muted)}.bookmark{background:none;border:0;color:var(--text);cursor:pointer;font-size:18px}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.admin-grid .wide{grid-column:1/-1}.admin-post{border:1px solid var(--line);padding:12px;margin:8px 0;background:var(--panel2)}.admin-post-title{font-weight:700;margin-bottom:8px}.admin-post-actions{display:flex;gap:8px;flex-wrap:wrap}.admin-post-actions button{font-size:13px;padding:7px 11px}.danger{border-color:#a44;color:#e99;background:transparent}.hidden{display:none!important}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding:60px 0 45px}.hero-photo{height:310px}.posts{grid-template-columns:1fr 1fr}.navlinks{gap:11px;font-size:12px}.portfolio{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{width:calc(100% - 28px)}nav{height:auto;min-height:65px;flex-wrap:wrap;padding:10px 0}.navlinks{order:3;width:100%;overflow:auto;padding-bottom:5px}.navtools{margin-left:auto}.hero{padding-top:45px}h1{font-size:48px}.bnhead{font-size:39px}.lead{font-size:16px}.hero-photo{height:270px}.posts{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.gallery-item{height:155px}.section-head{align-items:start;flex-direction:column}.two,.admin-grid{grid-template-columns:1fr}.admin-grid .wide{grid-column:auto}.contact{align-items:start;flex-direction:column;padding:24px}}
+
+:root{--bg:#f7f7ff;--panel:#fff;--panel2:#f0efff;--text:#19152f;--muted:#6e6987;--line:#e4e0fa;--accent:#6d5dfc;--inverse:#fff;--shadow:0 16px 45px #4434a51a}
+[data-theme="dark"]{color-scheme:dark;--bg:#100e20;--panel:#19162d;--panel2:#24203d;--text:#f7f4ff;--muted:#b3accd;--line:#393251;--accent:#a89cff;--inverse:#17132c;--shadow:0 16px 45px #0005}
+body{background:radial-gradient(ellipse at 8% 0%,#8b7cff1b,transparent 34%),radial-gradient(ellipse at 90% 20%,#ff8bc51a,transparent 30%),var(--bg)}
+.brand span,.tag,.overline{color:#806dff}.btn,.iconbtn,.field,.panel,.post,.portfolio,.contact,.gallery-item{border-radius:14px}.primary{background:linear-gradient(120deg,#725cff,#ed72b7);color:white;border:0;box-shadow:0 8px 22px #725cff35}.hero-photo{border:0;border-radius:28px;box-shadow:0 22px 55px #725cff35}.hero-photo img{filter:none}.post{border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}.post-art{height:170px;background:linear-gradient(135deg,#7865ff,#f17bb6 55%,#ffca83);color:white;position:relative}.post-art img{width:100%;height:100%;object-fit:cover}.post:hover{transform:translateY(-5px)}.portfolio{border-radius:24px;box-shadow:var(--shadow)}.gallery-item{border-radius:18px}.gallery-item img{filter:none}.contact{border-radius:24px;background:linear-gradient(115deg,#6858f5,#bb69e9,#f17eaa);color:#fff}.contact p{color:#fff}.contact .btn{color:#fff;border-color:#fff}.skill{border-radius:999px;background:var(--panel2)}.field:focus{outline:2px solid #8c7cff;outline-offset:1px}.admin-post{border-radius:14px}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat-card{padding:15px;border:1px solid var(--line);border-radius:15px;background:var(--panel2)}.stat-card strong{display:block;font:800 25px 'DM Sans';color:var(--accent)}.post-cover{width:100%;max-height:280px;object-fit:cover;border-radius:15px;margin:12px 0}.read-dialog{width:min(760px,calc(100% - 24px));max-height:85vh;overflow:auto;border-radius:20px}.read-dialog h2{font-size:28px}.read-content{white-space:pre-wrap;line-height:1.95}.gallery-item img{transition:.3s}.gallery-item:hover img{transform:scale(1.05)}
+@media(max-width:560px){.stat-grid{grid-template-columns:1fr 1fr}}
+
+/* Modern Smart visual refresh */
+:root{
+ --bg:#f6f7fb;--panel:#ffffff;--panel2:#f0f1fa;--text:#17172b;
+ --muted:#686b82;--line:#e5e6f0;--accent:#6558e8;--inverse:#fff;
+ --shadow:0 18px 55px rgba(35,31,86,.09)
+}
+[data-theme="dark"]{
+ --bg:#0c0d18;--panel:#151728;--panel2:#1c2035;--text:#f5f5ff;
+ --muted:#a8abc3;--line:#2b3049;--accent:#a99cff;--inverse:#111326;
+ --shadow:0 20px 60px rgba(0,0,0,.28)
+}
+body{background:
+ radial-gradient(ellipse at 5% 4%,rgba(111,94,255,.13),transparent 32%),
+ radial-gradient(ellipse at 95% 18%,rgba(255,112,176,.11),transparent 29%),var(--bg)}
+header{border-bottom:1px solid var(--line);box-shadow:0 5px 25px rgba(30,25,80,.04)}
+nav{min-height:76px}
+.brand{font-size:20px;letter-spacing:-1px}
+.brand span{color:var(--accent)}
+.navlinks a{padding:9px 11px;border-radius:999px;transition:.2s}
+.navlinks a:hover{background:var(--panel2);color:var(--accent)}
+.iconbtn{border-radius:12px;padding:10px 14px;transition:.2s}
+.hero{padding-top:90px;padding-bottom:85px;gap:65px}
+.kicker,.overline{color:var(--accent);letter-spacing:2.8px}
+h1{letter-spacing:-3.5px}
+.bnhead{color:var(--accent)}
+.lead{font-size:19px;line-height:1.95}
+.btn{border-radius:999px;padding:13px 22px;transition:transform .2s,box-shadow .2s,opacity .2s}
+.btn:hover{transform:translateY(-2px);opacity:1;box-shadow:0 10px 25px rgba(101,88,232,.16)}
+.primary{background:linear-gradient(115deg,#6658ed,#9b65e8 65%,#ed78b2);box-shadow:0 9px 25px rgba(101,88,232,.24)}
+.secondary{border-color:var(--line);background:var(--panel)}
+.hero-photo{height:440px;border-radius:32px;box-shadow:var(--shadow);background:var(--panel2)}
+.hero-photo:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.25);border-radius:32px;pointer-events:none}
+.hero-photo img{object-position:center 30%}
+section{padding:58px 0}
+.section-head{margin-bottom:28px}
+.section-title{font-size:clamp(27px,4vw,38px);letter-spacing:-.8px}
+.section-desc{font-size:15px}
+.toolbar{gap:12px}
+.field{border-radius:14px;padding:14px 16px;background:var(--panel);box-shadow:0 3px 14px rgba(30,25,80,.025)}
+.posts{gap:20px}
+.post{border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.post-art{height:175px;background:linear-gradient(135deg,#6c5ce7,#a46ce7 55%,#f08bb6);color:#fff}
+.post-body{padding:22px}
+.post h3{font-size:21px}
+.post p{line-height:1.9}
+.post-foot{padding-top:8px}
+.portfolio{border-radius:26px;box-shadow:var(--shadow);padding:34px}
+.skill{border-radius:999px;padding:9px 14px}
+.gallery-item{border-radius:20px;box-shadow:var(--shadow)}
+.panel{border-radius:22px;box-shadow:var(--shadow)}
+.notice{border-radius:12px;border-left:3px solid var(--accent)}
+.contact{border-radius:26px;padding:38px;background:linear-gradient(115deg,#6156e8,#9564e8 58%,#ee80b1);box-shadow:0 18px 45px rgba(101,88,232,.2)}
+.contact h2{font-size:clamp(24px,4vw,34px)}
+footer{padding-bottom:35px}
+dialog{border-radius:22px;box-shadow:0 25px 80px #0005}
+.admin-post{border-radius:16px}
+.stat-card{box-shadow:0 5px 18px rgba(30,25,80,.04)}
+@media(max-width:820px){.hero{padding-top:62px;gap:35px}.hero-photo{height:350px}}
+@media(max-width:560px){
+ .hero{padding-top:45px;padding-bottom:48px}
+ h1{font-size:clamp(43px,12vw,55px);letter-spacing:-2.5px}
+ .bnhead{font-size:clamp(34px,9vw,42px)}
+ .lead{font-size:16px}
+ .hero-photo{height:290px;border-radius:24px}
+ .section-title{font-size:27px}
+ .portfolio{padding:22px}
+ .contact{padding:25px;border-radius:20px}
+ .navlinks{gap:4px}
+ .navlinks a{padding:7px 9px}
+}
+
+
+/* Fix: keep post text visible when a cover image is present */
+.post{display:flex;flex-direction:column;min-width:0}
+.post-art{display:block;flex:0 0 175px;height:175px;min-height:175px;overflow:hidden}
+.post-art img{display:block;width:100%;height:100%;max-width:100%;object-fit:cover;position:static;opacity:1}
+.post-body{display:block;position:relative;z-index:1;min-width:0;background:var(--panel);visibility:visible;opacity:1}
+.post-body .tag,.post-body h3,.post-body p,.post-body .post-foot{display:block;visibility:visible;opacity:1}
+.post-body .post-foot{display:flex}
+
+/* Language, reader authentication, loading and professional admin UI */
+.navtools{align-items:center}.navtools .iconbtn{white-space:nowrap;font-weight:700}
+#loadingScreen{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;background:var(--bg);color:var(--text);transition:opacity .35s,visibility .35s}
+#loadingScreen small{color:var(--muted);font:500 12px "DM Sans";letter-spacing:.5px}
+#loadingScreen strong{font:800 16px "DM Sans";letter-spacing:2px}
+body:not(.is-loading) #loadingScreen{opacity:0;visibility:hidden;pointer-events:none}
+.loader-orbit{width:54px;height:54px;border:3px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:blogSpin .85s linear infinite;position:relative}
+.loader-orbit span{position:absolute;width:8px;height:8px;border-radius:50%;background:#ed78b2;top:3px;left:5px}.loader-orbit span:nth-child(2){top:auto;left:auto;right:0;bottom:8px;background:#8b79ff}.loader-orbit span:nth-child(3){top:22px;left:22px;width:6px;height:6px;background:var(--accent)}
+@keyframes blogSpin{to{transform:rotate(360deg)}}
+.auth-dialog{width:min(470px,calc(100% - 26px));padding:28px;border:1px solid var(--line);border-radius:26px;background:var(--panel);box-shadow:0 28px 90px #09051e55}
+.auth-dialog::backdrop{background:rgba(8,7,20,.72);backdrop-filter:blur(7px)}
+.auth-brand{display:flex;align-items:center;gap:14px;position:relative;padding:3px 30px 22px 0;border-bottom:1px solid var(--line);margin-bottom:20px}
+.auth-brand h2{font:800 25px "DM Sans";letter-spacing:-.8px;margin:4px 0}.auth-brand p{margin:0;color:var(--muted);font-size:13px}.auth-mark{width:48px;height:48px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(135deg,#6658ed,#ed78b2);color:#fff;font:800 23px "DM Sans";box-shadow:0 8px 20px #725cff45}
+.auth-brand .modal-close{position:absolute;right:-5px;top:-8px}.auth-label{font:700 12px "DM Sans";color:var(--text);margin:4px 0 -5px}.auth-label span{font-weight:400;color:var(--muted)}
+.auth-dialog .field{width:100%;min-height:48px}.auth-dialog .primary{width:100%;margin-top:5px;min-height:49px}.auth-switch{text-align:center;color:var(--muted);font-size:13px;margin:4px 0}.auth-switch .textbtn{color:var(--accent);font-weight:700}.auth-status{min-height:20px;margin:10px 0 0;font-size:13px;color:var(--accent);line-height:1.6}.auth-privacy{font-size:11px;color:var(--muted);text-align:center;margin:14px 0 0}
+#adminDialog{width:min(500px,calc(100% - 26px));padding:0;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:var(--panel);box-shadow:0 30px 100px #09051e66}
+#adminDialog::backdrop{background:rgba(8,7,20,.76);backdrop-filter:blur(8px)}
+#adminDialog .modal-head{padding:25px 27px 22px;background:linear-gradient(120deg,#211a50,#49358a 62%,#9c4f91);color:#fff;position:relative}
+#adminDialog .modal-head:before{content:"✦";display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:#ffffff20;border:1px solid #ffffff35;font-size:20px;margin-right:12px}
+#adminDialog .modal-head h2{font:800 22px "DM Sans";letter-spacing:-.6px;margin:0;flex:1}
+#adminDialog .modal-close{color:#fff;font-size:28px}
+#adminDialog #loginPanel,#adminDialog #dashboardPanel{padding:25px 27px 28px}
+#adminDialog #loginPanel>p{font-size:13px;line-height:1.7;margin:0 0 7px}
+#adminDialog #loginPanel .field{width:100%;min-height:49px;border-radius:13px}
+#adminDialog #loginButton{width:100%;min-height:49px;border-radius:13px;font-weight:800;letter-spacing:.2px;margin-top:5px}
+#adminDialog #adminStatus{display:block;text-align:center;min-height:18px;font-size:12px}
+#adminDialog .admin-grid .field{width:100%}
+#adminDialog .modal-head .overline{color:#e5dcff}
+@media(max-width:560px){.navtools{gap:5px}.navtools .iconbtn{padding:9px 10px;font-size:12px}.auth-dialog{padding:22px}.auth-brand h2{font-size:22px}#adminDialog .modal-head,#adminDialog #loginPanel,#adminDialog #dashboardPanel{padding-left:20px;padding-right:20px}}
+
+</style>
+</head>
+<body class="is-loading">
+<div id="loadingScreen" aria-label="Loading Yasin’s Blog"><div class="loader-orbit"><span></span><span></span><span></span></div><strong>YASIN’S BLOG</strong><small>Loading your space...</small></div>
+<div id="readingBar"></div>
+<header><div class="wrap"><nav>
+<a class="brand" href="#home">YASIN<span>'S BLOG.</span></a>
+<div class="navlinks"><a href="#home" data-i18n="navHome">Home</a><a href="#blog" data-i18n="navBlog">Blog</a><a href="#portfolio" data-i18n="navPortfolio">Portfolio</a><a href="#gallery" data-i18n="navGallery">Gallery</a><a href="#contact" data-i18n="navContact">Contact</a></div>
+<div class="navtools"><button class="iconbtn" id="languageToggle" type="button" aria-label="Change language">EN</button><button class="iconbtn" id="themeToggle" aria-label="Toggle theme">☼</button><button class="iconbtn" id="userOpen" type="button">Login</button><button class="iconbtn" id="adminOpen">Admin</button></div>
+</nav></div></header>
+<main class="wrap">
+<section class="hero" id="home"><div><div class="kicker" data-i18n="heroKicker">PERSONAL JOURNAL · 2026</div><h1>Ideas. Stories.<br><span class="bnhead">আমার নিজের গল্প।</span></h1>
+<p class="lead" data-i18n="heroLead">স্বাগতম Yasin's Blog-এ। এখানে আমি শেয়ার করি আমার ভাবনা, অভিজ্ঞতা, শেখার গল্প এবং জীবনের ছোট ছোট মুহূর্ত। A personal space for thoughts, creativity and growth.</p>
+<div class="actions"><a class="btn primary" href="#blog" data-i18n="readStories">লেখা পড়ুন / Read stories ↗</a><a class="btn secondary" href="#portfolio" data-i18n="aboutMe">আমার পরিচিতি / About me</a></div></div>
+<div class="hero-photo"><img src="yasin-profile.jpg" alt="Yasin profile photo"><span>A PERSONAL SPACE BY YASIN</span></div></section>
+
+<section id="blog"><div class="section-head"><div><div class="overline" data-i18n="journal">THE JOURNAL</div><h2 class="section-title" data-i18n="latestPosts">সাম্প্রতিক লেখা / Latest Posts</h2><p class="section-desc" data-i18n="searchHint">Search stories, filter categories and save your favourites.</p></div><span class="progress-label" id="bookmarkCount">0 saved</span></div>
+<div class="toolbar"><input class="field search" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="লেখা খুঁজুন / Search posts..."><select class="field" id="categoryFilter"><option value="all" data-i18n="allCategories">সব ক্যাটাগরি / All categories</option><option>Life</option><option>Thoughts</option><option>Learning</option><option>Personal</option><option>Technology</option></select></div>
+<div class="posts" id="postsGrid"></div><p id="emptyPosts" class="muted hidden">কোনো লেখা পাওয়া যায়নি।</p></section>
+
+<section id="portfolio"><div class="section-head"><div><div class="overline" data-i18n="aboutAuthor">ABOUT THE AUTHOR</div><h2 class="section-title" data-i18n="aboutTitle">আমি Yasin. / I'm Yasin.</h2></div></div>
+<div class="portfolio"><div><p>আমি Yasin—একজন শিক্ষার্থী। শেখা, নিজের ভাবনা প্রকাশ করা এবং প্রতিদিন একটু একটু করে এগিয়ে যাওয়ার যাত্রা এখানে লিখে রাখি।</p><p>এই ব্লগে থাকবে আমার ব্যক্তিগত গল্প, শেখার অভিজ্ঞতা, আগ্রহ এবং সৃজনশীল কাজ। সময়ের সঙ্গে এই পরিচিতি আরও সমৃদ্ধ হবে।</p><p>My goal is to learn, create and document the journey—one step at a time.</p><a href="mailto:syedizhakurrahman@gmail.com" class="textbtn">Contact me ↗</a></div><div><h3>Interests & Skills</h3><div class="skills"><span class="skill">Learning</span><span class="skill">Writing</span><span class="skill">Technology</span><span class="skill">Creativity</span><span class="skill">Personal Growth</span></div><h3>Find me online</h3><div class="skills"><a class="skill" href="https://www.facebook.com/syed.izhakur.rahman" target="_blank" rel="noopener">Facebook ↗</a><a class="skill" href="https://www.instagram.com/izhakur_rahman" target="_blank" rel="noopener">Instagram ↗</a></div></div></div></section>
+
+<section id="gallery"><div class="section-head"><div><div class="overline" data-i18n="photoStories">PHOTO STORIES</div><h2 class="section-title" data-i18n="galleryTitle">গ্যালারি / Gallery</h2><p class="section-desc" data-i18n="galleryHint">Tap a photo to view it larger.</p></div></div>
+<div class="gallery" id="galleryGrid"><button class="gallery-item" data-src="yasin-profile.jpg"><img src="yasin-profile.jpg" alt="Yasin profile photo"></button></div><p class="section-desc">নতুন ছবি Admin Dashboard থেকে আপলোড করা যাবে।</p></section>
+
+<section id="comments"><div class="section-head"><div><div class="overline" data-i18n="community">COMMUNITY</div><h2 class="section-title" data-i18n="commentsTitle">মতামত / Comments</h2><p class="section-desc" data-i18n="commentsHint">Share your thoughts with Yasin.</p></div></div>
+<div class="two"><form class="panel stack" id="commentForm"><input class="field" name="name" placeholder="তোমার নাম / Your name" required maxlength="60"><textarea class="field" name="message" rows="4" placeholder="মন্তব্য লিখো / Write a comment..." required maxlength="1000"></textarea><button class="btn primary" type="submit">মন্তব্য পাঠাও / Submit</button><div class="notice" id="commentNotice">Backend configure না করা পর্যন্ত মন্তব্যগুলো অনলাইনে সংরক্ষিত হবে না।</div></form><div class="panel"><h3>সাম্প্রতিক মন্তব্য</h3><div id="commentsList"><p class="muted">এখনো কোনো অনুমোদিত মন্তব্য নেই।</p></div></div></div></section>
+
+<section id="newsletter"><div class="panel two"><div><div class="overline" data-i18n="stayInTouch">STAY IN TOUCH</div><h2 class="section-title" data-i18n="newsletterTitle">Newsletter</h2><p class="muted">নতুন লেখা প্রকাশ হলে ইমেইলে খবর পেতে সাবস্ক্রাইব করো।</p></div><form id="newsletterForm" class="stack"><input class="field" type="email" name="email" placeholder="তোমার ইমেইল / Email address" required><button class="btn primary" type="submit">Subscribe ↗</button><small class="muted" id="newsletterNotice">তোমার ইমেইল শুধু আপডেট পাঠানোর জন্য ব্যবহার হবে।</small></form></div></section>
+
+<section id="analytics"><div class="section-head"><div><div class="overline" data-i18n="siteInsights">SITE INSIGHTS</div><h2 class="section-title" data-i18n="visitorAnalytics">Visitor Analytics</h2><p class="section-desc">Global counts appear after Supabase setup.</p></div></div><div class="portfolio"><div><div class="overline">TOTAL PAGE VIEWS</div><h2 id="globalViews">—</h2><p class="muted">সকল ভিজিটরের মোট Page Views</p></div><div><div class="overline">YOUR LOCAL VIEWS</div><h2 id="localViews">0</h2><p class="muted">এই ব্রাউজারে দেখা পেজের সংখ্যা</p></div></div></section>
+
+<section id="contact"><div class="contact"><div><h2 data-i18n="letsConnect">চলো কথা বলি। / Let's connect.</h2><p>syedizhakurrahman@gmail.com</p></div><div class="actions"><a class="btn" href="mailto:syedizhakurrahman@gmail.com">Email me ↗</a><button class="btn" id="shareButton">Share blog ↗</button></div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 YASIN'S BLOG. All rights reserved.</span><span>নিজের গল্প, নিজের ভাষায়।</span><span id="footerViews">Personal Journal</span></div></footer>
+
+<dialog id="userDialog" class="auth-dialog"><div class="auth-brand"><div class="auth-mark">Y</div><div><div class="overline">YASIN’S BLOG</div><h2 id="userDialogTitle">Welcome back</h2><p id="userDialogSubtitle">Sign in or create your reader account.</p></div><button class="modal-close" data-close="userDialog" aria-label="Close">×</button></div><div id="userAuthForm" class="stack"><label class="auth-label" for="userName">Name <span>(registration only)</span></label><input class="field" id="userName" autocomplete="name" placeholder="Your name"><label class="auth-label" for="userEmail">Email address</label><input class="field" id="userEmail" type="email" autocomplete="email" placeholder="you@example.com"><label class="auth-label" for="userPassword">Password</label><input class="field" id="userPassword" type="password" autocomplete="current-password" placeholder="At least 6 characters"><button class="btn primary" id="userAuthSubmit" type="button">Sign in</button><p class="auth-switch"><span id="userSwitchText">New here?</span> <button class="textbtn" id="userModeToggle" type="button">Create an account</button></p></div><div id="userAccountPanel" class="stack hidden"><p class="muted" id="userAccountEmail"></p><button class="btn secondary" id="userLogout" type="button">Sign out</button></div><p class="auth-status" id="userAuthStatus" role="status" aria-live="polite"></p><p class="auth-privacy">Your account is secured by Supabase Authentication.</p></dialog>
+<dialog id="adminDialog"><div class="modal-head"><h2 data-i18n="adminLoginTitle">Secure Admin Login</h2><button class="modal-close" data-close="adminDialog">×</button></div>
+<div id="loginPanel" class="stack"><p class="muted">Supabase configuration required. Admin access is protected by Supabase Auth and database policies.</p><input class="field" id="adminEmail" type="email" placeholder="Admin email"><input class="field" id="adminPassword" type="password" placeholder="Password"><button class="btn primary" id="loginButton" data-i18n="adminLoginButton">Login</button><small id="adminStatus" class="muted">প্রথমে config.js সেটআপ করতে হবে।</small></div>
+<div id="dashboardPanel" class="hidden stack"><h3>Dashboard</h3>
+<div class="admin-grid"><input class="field" id="newTitle" placeholder="Post title"><input class="field" id="newCategory" placeholder="Category"><textarea class="field wide" id="newExcerpt" rows="2" placeholder="Excerpt"></textarea><textarea class="field wide" id="newBody" rows="6" placeholder="Full post content"></textarea><input class="field wide" id="newCover" type="url" placeholder="Cover image URL (optional)"></div>
+<div class="admin-post-actions"><button class="btn primary" id="publishButton">Publish post</button><button class="btn secondary hidden" id="cancelEditButton" type="button">Cancel edit</button></div>
+<p class="muted" id="dashboardStatus"></p>
+<div class="stat-grid"><div class="stat-card"><span class="muted">Published posts</span><strong id="statPosts">—</strong></div><div class="stat-card"><span class="muted">Subscribers</span><strong id="statSubs">—</strong></div><div class="stat-card"><span class="muted">Page views</span><strong id="statViews">—</strong></div></div>
+<h3>Gallery Manager</h3><p class="muted">ছবি আপলোডের জন্য Supabase Storage-এ `yasin-gallery` bucket ও migration policy প্রয়োজন।</p><input class="field" id="galleryUpload" type="file" accept="image/*"><button class="btn secondary" id="uploadGalleryButton" type="button">Upload photo</button>
+<h3>Newsletter Subscribers</h3><div id="subscriberList" class="stack"><p class="muted">Login করলে subscriber list লোড হবে।</p></div>
+<hr style="border:0;border-top:1px solid var(--line);width:100%"><h3>Manage Posts / লেখা পরিচালনা</h3><div id="adminPostsList" class="stack"><p class="muted">পোস্ট লোড হচ্ছে...</p></div><button class="btn secondary" id="logoutButton">Logout</button></div>
+</dialog>
+<dialog id="readDialog" class="read-dialog"><div class="modal-head"><h2 id="readTitle"></h2><button class="modal-close" data-close="readDialog">×</button></div><p class="tag" id="readMeta"></p><img id="readCover" class="post-cover hidden" alt="Post cover"><div class="read-content" id="readBody"></div><p><button class="btn secondary" id="sharePost">Share this post ↗</button></p></dialog>
+<dialog id="photoDialog"><button class="modal-close" data-close="photoDialog" style="float:right">×</button><img id="largePhoto" alt="Gallery preview" style="width:100%;height:auto;max-height:75vh;object-fit:contain"></dialog>
+
+<script src="config.js"></script>
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+const cfg=window.YASIN_CONFIG||{};
+const configured=Boolean(cfg.SUPABASE_URL&&cfg.SUPABASE_ANON_KEY&&!cfg.SUPABASE_URL.includes("YOUR_")&&!cfg.SUPABASE_ANON_KEY.includes("YOUR_"));
+const supabase=configured?createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY):null;
+const defaults=[
+{id:"sample-1",title:"নতুন করে শুরু করার সাহস",category:"Life",excerpt:"প্রতিটি সকাল নতুন সম্ভাবনা নিয়ে আসে। শুরুটা ছোট হলেও, এগিয়ে যাওয়াটাই সবচেয়ে গুরুত্বপূর্ণ।",body:"প্রতিটি সকাল নতুন সম্ভাবনা নিয়ে আসে। শুরুটা ছোট হলেও, এগিয়ে যাওয়াটাই সবচেয়ে গুরুত্বপূর্ণ। নিজের লক্ষ্য ঠিক রেখে প্রতিদিন একটু একটু করে এগিয়ে যাওয়াই আসল কথা।",created_at:"2026-11-09"},
+{id:"sample-2",title:"ছোট ছোট স্বপ্নের গল্প",category:"Thoughts",excerpt:"বড় স্বপ্নের পথে প্রতিদিনের ছোট পদক্ষেপই একদিন বড় পরিবর্তনের কারণ হয়ে দাঁড়ায়।",body:"বড় স্বপ্নের পথে প্রতিদিনের ছোট পদক্ষেপই একদিন বড় পরিবর্তনের কারণ হয়ে দাঁড়ায়।",created_at:"2026-11-05"},
+{id:"sample-3",title:"প্রতিদিন একটু একটু উন্নতি",category:"Learning",excerpt:"নিজেকে গতকালের চেয়ে ভালো করার চেষ্টা—এই ধারাবাহিকতাই সাফল্য।",body:"নিজেকে গতকালের চেয়ে ভালো করার চেষ্টা—এই ধারাবাহিকতাই সাফল্য।",created_at:"2026-11-01"}
+];
+let posts=defaults;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const saved=()=>JSON.parse(localStorage.getItem("yasinBookmarks")||"[]");
+const translations={
+ bn:{navHome:"হোম",navBlog:"ব্লগ",navPortfolio:"পরিচিতি",navGallery:"গ্যালারি",navContact:"যোগাযোগ",heroKicker:"ব্যক্তিগত ডায়েরি · ২০২৬",heroLead:"Yasin’s Blog-এ স্বাগতম। এখানে আমি আমার ভাবনা, অভিজ্ঞতা, শেখার গল্প এবং জীবনের ছোট ছোট মুহূর্ত শেয়ার করি।",readStories:"লেখা পড়ুন ↗",aboutMe:"আমার পরিচিতি",journal:"ব্যক্তিগত লেখা",latestPosts:"সাম্প্রতিক লেখা",searchHint:"লেখা খুঁজুন, ক্যাটাগরি বাছাই করুন এবং পছন্দের লেখা সংরক্ষণ করুন।",allCategories:"সব ক্যাটাগরি",aboutAuthor:"লেখক সম্পর্কে",aboutTitle:"আমি Yasin.",photoStories:"ছবির গল্প",galleryTitle:"গ্যালারি",galleryHint:"বড় করে দেখতে ছবিতে চাপ দিন।",community:"কমিউনিটি",commentsTitle:"মতামত",commentsHint:"Yasin-এর সঙ্গে তোমার মতামত শেয়ার করো।",stayInTouch:"যোগাযোগ রাখুন",newsletterTitle:"নিউজলেটার",siteInsights:"ওয়েবসাইটের তথ্য",visitorAnalytics:"ভিজিটর পরিসংখ্যান",letsConnect:"চলো কথা বলি।",adminLoginTitle:"নিরাপদ অ্যাডমিন লগইন",adminLoginButton:"লগইন",searchPlaceholder:"লেখা খুঁজুন..."},
+ en:{navHome:"Home",navBlog:"Blog",navPortfolio:"About",navGallery:"Gallery",navContact:"Contact",heroKicker:"PERSONAL JOURNAL · 2026",heroLead:"Welcome to Yasin’s Blog. Here I share my thoughts, experiences, learning journey and little moments from life.",readStories:"Read stories ↗",aboutMe:"About me",journal:"THE JOURNAL",latestPosts:"Latest Posts",searchHint:"Search stories, filter categories and save your favourites.",allCategories:"All categories",aboutAuthor:"ABOUT THE AUTHOR",aboutTitle:"I’m Yasin.",photoStories:"PHOTO STORIES",galleryTitle:"Gallery",galleryHint:"Tap a photo to view it larger.",community:"COMMUNITY",commentsTitle:"Comments",commentsHint:"Share your thoughts with Yasin.",stayInTouch:"STAY IN TOUCH",newsletterTitle:"Newsletter",siteInsights:"SITE INSIGHTS",visitorAnalytics:"Visitor Analytics",letsConnect:"Let’s connect.",adminLoginTitle:"Secure Admin Login",adminLoginButton:"Sign in",searchPlaceholder:"Search posts..."}
+};
+let currentLanguage=localStorage.getItem("yasinLanguage")==="en"?"en":"bn";
+function setLanguage(lang){currentLanguage=lang;localStorage.setItem("yasinLanguage",lang);document.documentElement.lang=lang;document.querySelectorAll("[data-i18n]").forEach(el=>{const value=translations[lang][el.dataset.i18n];if(value!==undefined)el.textContent=value});document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{const value=translations[lang][el.dataset.i18nPlaceholder];if(value!==undefined)el.placeholder=value});$("languageToggle").textContent=lang==="bn"?"EN":"বাংলা";$("userOpen").textContent=lang==="bn"?"লগইন":"Login";$("emptyPosts").textContent=lang==="bn"?"কোনো লেখা পাওয়া যায়নি।":"No posts found.";if(typeof renderPosts==="function")renderPosts()}
+$("languageToggle").addEventListener("click",()=>setLanguage(currentLanguage==="bn"?"en":"bn"));
+
+function renderPosts(){const q=$("searchInput").value.toLowerCase().trim(),cat=$("categoryFilter").value;const shown=posts.filter(p=>(cat==="all"||p.category===cat)&&(`${p.title||""} ${p.excerpt||""} ${p.body||""}`.toLowerCase().includes(q)));$("postsGrid").innerHTML=shown.map(p=>`<article class="post"><div class="post-art">${p.cover_image_url?`<img src="${esc(p.cover_image_url)}" alt="${esc(p.title||"Post")} cover">`:esc((p.category||"BLOG").toUpperCase())}</div><div class="post-body"><div class="tag">${esc(p.category||"BLOG")}</div><h3>${esc(p.title||"Untitled post")}</h3><p>${esc(p.excerpt||p.body||"")}</p><div class="post-foot"><span>${p.created_at?new Date(p.created_at).toLocaleDateString():"YASIN'S BLOG"}</span><span><button class="textbtn" data-read="${esc(p.id)}">${currentLanguage==="bn"?"পড়ুন ↗":"Read ↗"}</button><button class="bookmark" title="Bookmark" data-bookmark="${esc(p.id)}">${saved().includes(p.id)?"★":"☆"}</button></span></div></div></article>`).join("");$("emptyPosts").classList.toggle("hidden",shown.length>0);if(!shown.length&&posts.length)$("emptyPosts").textContent="কোনো লেখা পাওয়া যায়নি।";$("bookmarkCount").textContent=saved().length+(currentLanguage==="bn"?"টি সংরক্ষিত":" saved")}
+function refreshBookmarkCount(){ $("bookmarkCount").textContent=saved().length+(currentLanguage==="bn"?"টি সংরক্ষিত":" saved"); }
+$("searchInput").addEventListener("input",renderPosts);$("categoryFilter").addEventListener("change",renderPosts);
+$("postsGrid").addEventListener("click",e=>{const b=e.target.closest("[data-bookmark]");if(b){const id=b.dataset.bookmark,a=saved(),n=a.includes(id)?a.filter(x=>x!==id):[...a,id];localStorage.setItem("yasinBookmarks",JSON.stringify(n));renderPosts();return}const r=e.target.closest("[data-read]");if(r){const p=posts.find(x=>String(x.id)===r.dataset.read);if(p){$("readTitle").textContent=p.title||"";$("readMeta").textContent=(p.category||"BLOG")+" · "+(p.created_at?new Date(p.created_at).toLocaleDateString():"");$("readBody").textContent=p.body||p.excerpt||"";$("readCover").src=p.cover_image_url||"";$("readCover").classList.toggle("hidden",!p.cover_image_url);$("readDialog").showModal();window.currentReadPost=p;}}});
+const theme=localStorage.getItem("yasinTheme")||"dark";document.documentElement.dataset.theme=theme;$("themeToggle").textContent=theme==="dark"?"☼":"☾";$("themeToggle").onclick=()=>{const t=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=t;localStorage.setItem("yasinTheme",t);$("themeToggle").textContent=t==="dark"?"☼":"☾"};
+window.addEventListener("scroll",()=>{const d=document.documentElement,max=d.scrollHeight-d.clientHeight;$("readingBar").style.width=(max>0?d.scrollTop/max*100:0)+"%"});
+document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>$(b.dataset.close).close());
+$("adminOpen").onclick=()=>{$("adminDialog").showModal()};
+$("galleryGrid").addEventListener("click",e=>{const b=e.target.closest("[data-src]");if(b){$("largePhoto").src=b.dataset.src;$("photoDialog").showModal()}});
+$("shareButton").onclick=async()=>{if(navigator.share){try{await navigator.share({title:"Yasin's Blog",url:location.href})}catch(e){}}else{await navigator.clipboard.writeText(location.href);alert("লিংক কপি হয়েছে।")}};
+const localKey="yasinLocalPageViews";let local=Number(localStorage.getItem(localKey)||0)+1;localStorage.setItem(localKey,local);$("localViews").textContent=local;
+async function loadBackend(){
+ if(!supabase){$("commentNotice").textContent="Backend এখনো configure করা হয়নি। Setup guide অনুসরণ করে config.js পূরণ করো।";$("newsletterNotice").textContent="Newsletter চালু করতে Supabase configuration প্রয়োজন।";return}
+ const {error:pvError}=await supabase.from("page_views").insert({path:location.pathname});const {data:viewCount,error:viewError}=await supabase.rpc("get_public_page_view_count");$("globalViews").textContent=viewError?"—":(viewCount??"0");
+ const {data:p,error:postsError}=await supabase.from("posts").select("id,title,category,excerpt,body,cover_image_url,published,created_at").eq("published",true).order("created_at",{ascending:false});
+ if(postsError){
+  console.error("Public posts load failed:",postsError);
+  $("emptyPosts").textContent="পোস্ট লোড করা যায়নি: "+postsError.message;
+  $("emptyPosts").classList.remove("hidden");
+  $("postsGrid").innerHTML="";
+ }else{
+  posts=Array.isArray(p)?p:[];
+  renderPosts();
+  if(!posts.length){$("emptyPosts").textContent="এখনো কোনো Published পোস্ট নেই।";$("emptyPosts").classList.remove("hidden")}
+ }
+ const {data:galleryFiles}=await supabase.storage.from("yasin-gallery").list("",{limit:100,sortBy:{column:"created_at",order:"desc"}});if(galleryFiles?.length){for(const f of galleryFiles){if(!f.name||f.name.startsWith("."))continue;const {data:u}=supabase.storage.from("yasin-gallery").getPublicUrl(f.name);const b=document.createElement("button");b.className="gallery-item";b.dataset.src=u.publicUrl;b.innerHTML=`<img alt="Gallery photo" src="${esc(u.publicUrl)}">`;$("galleryGrid").appendChild(b)}}const {data:c}=await supabase.from("comments").select("name,message,created_at").eq("approved",true).order("created_at",{ascending:false}).limit(20);if(c?.length){$("commentsList").innerHTML=c.map(x=>`<div class="comment"><strong>${esc(x.name)}</strong><small>${new Date(x.created_at).toLocaleString()}</small><p>${esc(x.message)}</p></div>`).join("")}
+ $("commentNotice").textContent="মন্তব্য জমা দিলে moderation-এর পর প্রকাশিত হবে।";$("newsletterNotice").textContent="সাবস্ক্রিপশন নিশ্চিত করতে ইমেইল ঠিকানা দাও।";
+}
+$("commentForm").onsubmit=async e=>{e.preventDefault();if(!supabase){$("commentNotice").textContent="মন্তব্য অনলাইনে পাঠাতে Supabase config প্রয়োজন।";return}const f=new FormData(e.target);const {error}=await supabase.from("comments").insert({name:f.get("name"),message:f.get("message")});$("commentNotice").textContent=error?"মন্তব্য পাঠানো যায়নি। পরে চেষ্টা করো।":"ধন্যবাদ! মন্তব্যটি moderation-এর জন্য পাঠানো হয়েছে।";if(!error)e.target.reset()};
+$("newsletterForm").onsubmit=async e=>{e.preventDefault();if(!supabase){$("newsletterNotice").textContent="Newsletter backend configure করা হয়নি।";return}const f=new FormData(e.target);const {error}=await supabase.from("subscribers").insert({email:f.get("email")});$("newsletterNotice").textContent=error?(error.code==="23505"?"এই ইমেইল আগে থেকেই subscribed।":"Subscription সম্পন্ন হয়নি।"):"সাবস্ক্রাইব করার জন্য ধন্যবাদ!";if(!error)e.target.reset()};
+let editingPostId=null;
+function resetPostEditor(){editingPostId=null;$("newTitle").value="";$("newCategory").value="";$("newExcerpt").value="";$("newBody").value="";$("newCover").value="";$("publishButton").textContent="Publish post";$("cancelEditButton").classList.add("hidden")}
+async function refreshPosts(){if(!supabase)return;const {data,error}=await supabase.from("posts").select("*").order("created_at",{ascending:false});if(error){$("dashboardStatus").textContent="পোস্ট লোড হয়নি: "+error.message;return}posts=data||[];renderPosts();renderAdminPosts();$("statPosts").textContent=posts.filter(x=>x.published).length;const [{count:subs},{data:views}]=await Promise.all([supabase.from("subscribers").select("id",{count:"exact",head:true}),supabase.rpc("get_public_page_view_count")]);$("statSubs").textContent=subs??"—";$("statViews").textContent=views??"—";const {data:emails}=await supabase.from("subscribers").select("email,created_at").order("created_at",{ascending:false}).limit(30);$("subscriberList").innerHTML=emails?.length?emails.map(x=>`<div class="admin-post">${esc(x.email)} <small class="muted">${x.created_at?new Date(x.created_at).toLocaleDateString():""}</small></div>`).join(""):'<p class="muted">এখনো subscriber নেই অথবা list access হয়নি।</p>'}
+function renderAdminPosts(){const box=$("adminPostsList");if(!posts.length){box.innerHTML='<p class="muted">এখনো কোনো পোস্ট নেই।</p>';return}box.innerHTML=posts.map(p=>`<div class="admin-post"><div class="admin-post-title">${esc(p.title)}</div><div class="muted" style="font-size:12px;margin-bottom:8px">${esc(p.category||"Life")} · ${p.published?"Published":"Draft"}</div><div class="admin-post-actions"><button class="btn secondary" data-edit-post="${esc(p.id)}" type="button">Edit</button><button class="btn danger" data-delete-post="${esc(p.id)}" type="button">Delete</button></div></div>`).join("")}
+$("adminPostsList").addEventListener("click",async e=>{const edit=e.target.closest("[data-edit-post]");if(edit){const p=posts.find(x=>String(x.id)===edit.dataset.editPost);if(!p)return;editingPostId=p.id;$("newTitle").value=p.title||"";$("newCategory").value=p.category||"Life";$("newExcerpt").value=p.excerpt||"";$("newBody").value=p.body||"";$("newCover").value=p.cover_image_url||"";$("publishButton").textContent="Save changes";$("cancelEditButton").classList.remove("hidden");$("dashboardStatus").textContent="এখন লেখা সম্পাদনা করো, তারপর Save changes চাপো।";$("newTitle").scrollIntoView({behavior:"smooth",block:"center"});return}const del=e.target.closest("[data-delete-post]");if(del){const p=posts.find(x=>String(x.id)===del.dataset.deletePost);if(!p||!confirm(`“${p.title}” পোস্টটি স্থায়ীভাবে Delete করবে?`))return;del.disabled=true;const {error}=await supabase.from("posts").delete().eq("id",p.id);if(error){$("dashboardStatus").textContent="Delete হয়নি: "+error.message;del.disabled=false;return}const bookmarks=saved().filter(x=>String(x)!==String(p.id));localStorage.setItem("yasinBookmarks",JSON.stringify(bookmarks));$("dashboardStatus").textContent="Post deleted successfully.";if(String(editingPostId)===String(p.id))resetPostEditor();await refreshPosts()}});
+$("cancelEditButton").onclick=()=>{resetPostEditor();$("dashboardStatus").textContent="Edit বাতিল করা হয়েছে।"};
+$("loginButton").onclick=async()=>{if(!supabase){$("adminStatus").textContent="config.js-এ Supabase URL ও anon key বসাও।";return}const {error}=await supabase.auth.signInWithPassword({email:$("adminEmail").value,password:$("adminPassword").value});$("adminStatus").textContent=error?"Login ব্যর্থ। তথ্য যাচাই করো।":"Login successful.";if(!error){$("loginPanel").classList.add("hidden");$("dashboardPanel").classList.remove("hidden");await refreshPosts()}};
+$("logoutButton").onclick=async()=>{await supabase?.auth.signOut();resetPostEditor();$("dashboardPanel").classList.add("hidden");$("loginPanel").classList.remove("hidden")};
+$("publishButton").onclick=async()=>{if(!supabase)return;const {data:{user}}=await supabase.auth.getUser();if(!user){$("dashboardStatus").textContent="আগে Login করো।";return}const payload={title:$("newTitle").value.trim(),category:$("newCategory").value.trim()||"Life",excerpt:$("newExcerpt").value.trim(),body:$("newBody").value.trim(),cover_image_url:$("newCover").value.trim()||null,published:true,author_id:user.id};if(!payload.title||!payload.body){$("dashboardStatus").textContent="Post title এবং Full post content দিতে হবে।";return}let error;if(editingPostId){({error}=await supabase.from("posts").update({title:payload.title,category:payload.category,excerpt:payload.excerpt,body:payload.body,cover_image_url:payload.cover_image_url}).eq("id",editingPostId));$("dashboardStatus").textContent=error?"Update ব্যর্থ: "+error.message:"Post updated successfully!"}else{({error}=await supabase.from("posts").insert(payload));$("dashboardStatus").textContent=error?"Publish ব্যর্থ: "+error.message:"Post published!"}if(!error){resetPostEditor();await refreshPosts()}};
+
+$("sharePost").onclick=async()=>{const p=window.currentReadPost;if(!p)return;const url=location.href.split("#")[0]+"#blog";if(navigator.share){try{await navigator.share({title:p.title,text:p.excerpt||"",url})}catch(e){}}else{await navigator.clipboard.writeText(url);alert("লিংক কপি হয়েছে।")}};
+$("uploadGalleryButton").onclick=async()=>{const file=$("galleryUpload").files[0];if(!file){$("dashboardStatus").textContent="আগে একটি ছবি নির্বাচন করো।";return}if(!supabase)return;const safe=file.name.toLowerCase().replace(/[^a-z0-9._-]/g,"-");const path=Date.now()+"-"+safe;const {error}=await supabase.storage.from("yasin-gallery").upload(path,file,{upsert:false});if(error){$("dashboardStatus").textContent="Upload হয়নি: "+error.message;return}const {data}=supabase.storage.from("yasin-gallery").getPublicUrl(path);const b=document.createElement("button");b.className="gallery-item";b.dataset.src=data.publicUrl;b.innerHTML=`<img alt="Gallery photo" src="${esc(data.publicUrl)}">`;$("galleryGrid").appendChild(b);$("dashboardStatus").textContent="ছবি Gallery-তে যোগ হয়েছে।";$("galleryUpload").value=""};
+
+// Reader account: separate from the protected administrator account.
+let userAuthMode="login";let activeReader=null;
+function setUserMode(mode){userAuthMode=mode;const signup=mode==="signup";$("userDialogTitle").textContent=signup?(currentLanguage==="bn"?"নতুন অ্যাকাউন্ট তৈরি":"Create your account"):(currentLanguage==="bn"?"আবার স্বাগতম":"Welcome back");$("userDialogSubtitle").textContent=signup?(currentLanguage==="bn"?"পাঠক হিসেবে নিবন্ধন করো।":"Register as a reader."):(currentLanguage==="bn"?"তোমার পাঠক অ্যাকাউন্টে প্রবেশ করো।":"Sign in to your reader account.");$("userName").classList.toggle("hidden",!signup);$("userAuthSubmit").textContent=signup?(currentLanguage==="bn"?"অ্যাকাউন্ট তৈরি":"Create account"):(currentLanguage==="bn"?"লগইন":"Sign in");$("userSwitchText").textContent=signup?(currentLanguage==="bn"?"আগে থেকেই অ্যাকাউন্ট আছে?":"Already have an account?"):(currentLanguage==="bn"?"নতুন এখানে?":"New here?");$("userModeToggle").textContent=signup?(currentLanguage==="bn"?"লগইন করো":"Sign in"):(currentLanguage==="bn"?"অ্যাকাউন্ট তৈরি":"Create an account");$("userPassword").autocomplete=signup?"new-password":"current-password";}
+$("userOpen").onclick=async()=>{if(supabase){const {data}=await supabase.auth.getUser();activeReader=data?.user||null}const logged=Boolean(activeReader);$("userAuthForm").classList.toggle("hidden",logged);$("userAccountPanel").classList.toggle("hidden",!logged);$("userAccountEmail").textContent=logged?activeReader.email:"";$("userDialog").showModal();setUserMode("login")};
+$("userModeToggle").onclick=()=>{setUserMode(userAuthMode==="login"?"signup":"login");$("userAuthStatus").textContent=""};
+$("userAuthSubmit").onclick=async()=>{if(!supabase){$("userAuthStatus").textContent=currentLanguage==="bn"?"অ্যাকাউন্ট চালু করতে Supabase configuration প্রয়োজন।":"Supabase configuration is required.";return}const email=$("userEmail").value.trim(),password=$("userPassword").value,name=$("userName").value.trim();if(!email||!password){$("userAuthStatus").textContent=currentLanguage==="bn"?"ইমেইল ও পাসওয়ার্ড দাও।":"Enter your email and password.";return}if(password.length<6){$("userAuthStatus").textContent=currentLanguage==="bn"?"পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।":"Password must be at least 6 characters.";return}const btn=$("userAuthSubmit");btn.disabled=true;btn.textContent=currentLanguage==="bn"?"অপেক্ষা করো...":"Please wait...";let result;if(userAuthMode==="signup"){result=await supabase.auth.signUp({email,password,options:{data:{full_name:name}}});if(!result.error){$("userAuthStatus").textContent=currentLanguage==="bn"?"নিবন্ধন হয়েছে। ইমেইল confirmation চাইলে ইনবক্স দেখে নিশ্চিত করো।":"Registration submitted. Check your inbox if email confirmation is required.";if(result.data?.session){activeReader=result.data.user;$("userAuthForm").classList.add("hidden");$("userAccountPanel").classList.remove("hidden");$("userAccountEmail").textContent=activeReader?.email||email}}}else{result=await supabase.auth.signInWithPassword({email,password});if(!result.error){activeReader=result.data.user;$("userAuthForm").classList.add("hidden");$("userAccountPanel").classList.remove("hidden");$("userAccountEmail").textContent=activeReader?.email||email;$("userAuthStatus").textContent=currentLanguage==="bn"?"সফলভাবে লগইন হয়েছে।":"Signed in successfully."}}if(result.error)$("userAuthStatus").textContent=(currentLanguage==="bn"?"সমস্যা হয়েছে: ":"Error: ")+result.error.message;btn.disabled=false;setUserMode(userAuthMode)};
+$("userLogout").onclick=async()=>{await supabase?.auth.signOut();activeReader=null;$("userAccountPanel").classList.add("hidden");$("userAuthForm").classList.remove("hidden");$("userAuthStatus").textContent=currentLanguage==="bn"?"লগআউট হয়েছে।":"Signed out.";setUserMode("login")};
+if(supabase){supabase.auth.getUser().then(({data})=>{activeReader=data?.user||null}).catch(()=>{});}
+
+setLanguage(currentLanguage);
+renderPosts();loadBackend();
+window.addEventListener("load",()=>{document.body.classList.remove("is-loading")});setTimeout(()=>document.body.classList.remove("is-loading"),5000);
+</script>
+</body></html>
