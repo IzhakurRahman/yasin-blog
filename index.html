@@ -112,6 +112,14 @@ dialog{border-radius:22px;box-shadow:0 25px 80px #0005}
  .navlinks a{padding:7px 9px}
 }
 
+
+/* Fix: keep post text visible when a cover image is present */
+.post{display:flex;flex-direction:column;min-width:0}
+.post-art{display:block;flex:0 0 175px;height:175px;min-height:175px;overflow:hidden}
+.post-art img{display:block;width:100%;height:100%;max-width:100%;object-fit:cover;position:static;opacity:1}
+.post-body{display:block;position:relative;z-index:1;min-width:0;background:var(--panel);visibility:visible;opacity:1}
+.post-body .tag,.post-body h3,.post-body p,.post-body .post-foot{display:block;visibility:visible;opacity:1}
+.post-body .post-foot{display:flex}
 </style>
 </head>
 <body>
