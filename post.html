@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Yasin's Blog | Post</title>
+<meta name="description" content="Read stories and thoughts from Yasin's Blog.">
+<style>
+body{font-family:Arial,sans-serif;background:#090909;color:#fff;line-height:1.8;margin:0;padding:25px}
+main{max-width:800px;margin:50px auto}
+a{color:#a99cff}
+article{background:#171717;padding:25px;border-radius:16px}
+</style>
+</head>
+<body>
+<main>
+<a href="./">← Yasin's Blog</a>
+<article>
+<h1 id="title">Blog Post</h1>
+<p id="excerpt"></p>
+<div id="content">লেখা লোড হচ্ছে...</div>
+</article>
+</main>
+<script src="config.js"></script>
+<script type="module">
+import {createClient} from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+const cfg=window.YASIN_CONFIG||{};
+const client=cfg.SUPABASE_URL&&cfg.SUPABASE_ANON_KEY
+?createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY):null;
+
+const id=new URLSearchParams(location.search).get("id");
+
+async function loadPost(){
+if(!client||!id){
+document.getElementById("content").textContent="পোস্ট পাওয়া যায়নি।";
+return;
+}
+const {data,error}=await client.from("posts")
+.select("title,excerpt,body,created_at")
+.eq("id",id).eq("published",true).single();
+
+if(error||!data){
+document.getElementById("content").textContent="পোস্ট পাওয়া যায়নি।";
+return;
+}
+
+document.title=data.title+" | Yasin's Blog";
+document.getElementById("title").textContent=data.title;
+document.getElementById("excerpt").textContent=data.excerpt||"";
+document.getElementById("content").textContent=data.body||"";
+}
+loadPost();
+</script>
+</body>
+</html>
