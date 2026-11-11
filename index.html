@@ -301,18 +301,9 @@ if(supabase){supabase.auth.getUser().then(({data})=>{activeReader=data?.user||nu
 setLanguage(currentLanguage);
 renderPosts();loadBackend();
 window.addEventListener("load",()=>{document.body.classList.remove("is-loading")});setTimeout(()=>document.body.classList.remove("is-loading"),5000);
-</script>
-<section id="premiumHighlights" class="wrap"><div class="featured-strip">
-<article class="featured-card"><span class="overline" style="color:#fff">YASIN'S EDITORIAL SPACE</span><h3>Stories worth your time.</h3><p>ভাবনা, অভিজ্ঞতা ও শেখার গল্প—একটি সুন্দর পাঠ-অভিজ্ঞতায়।</p><a class="btn" href="#blog">Explore the journal ↗</a></article>
-<article class="featured-card secondary-feature"><span class="overline">READER COMMUNITY</span><h3>Read. React. Connect.</h3><p>লেখা পড়ুন, পছন্দের পোস্টে Like দিন এবং নিজের মতামত জানান।</p><a class="btn secondary" href="#comments">Join the conversation ↗</a></article>
-</div></section>
-<dialog id="profileDialog"><div class="modal-head"><h2>Reader Profile</h2><button class="modal-close" data-close="profileDialog">×</button></div><form id="profileForm" class="v2-form">
-<label>Display name<input class="field" id="profileName" maxlength="80" placeholder="Your name"></label>
-<label>Short bio<textarea class="field" id="profileBio" rows="3" maxlength="240"></textarea></label>
-<label>Avatar image URL<input class="field" id="profileAvatar" type="url" placeholder="https://..."></label>
-<button class="btn primary" type="submit">Save profile</button><p id="profileStatus" class="muted"></p></form></dialog>
-<dialog id="notificationDialog"><div class="modal-head"><h2>Notifications</h2><button class="modal-close" data-close="notificationDialog">×</button></div><div id="notificationList"><p class="muted">Login to view notifications.</p></div></dialog>
-<script type="module" id="premium-v2-script">
+
+window.addEventListener("DOMContentLoaded",()=>{
+
 const v2$=id=>document.getElementById(id), v2msg=(id,msg)=>{if(v2$(id))v2$(id).textContent=msg};
 let v2CurrentPost=null;
 const v2User=async()=>{if(!supabase)return null;try{const {data}=await supabase.auth.getUser();return data?.user||null}catch{return null}};
@@ -329,5 +320,18 @@ v2$("readCommentForm")?.addEventListener("submit",async e=>{e.preventDefault();c
 async function v2AdminStats(){if(!supabase)return;const rs=await Promise.all([supabase.from("profiles").select("id",{count:"exact",head:true}),supabase.from("post_likes").select("id",{count:"exact",head:true}),supabase.from("comments").select("id",{count:"exact",head:true})]);["v2UserCount","v2LikeCount","v2CommentCount"].forEach((id,i)=>{if(v2$(id))v2$(id).textContent=rs[i].error?"—":String(rs[i].count??0)});if(rs.some(x=>x.error))v2msg("v2AdminStatus","Install the V2 SQL migration to enable all community statistics.")};
 const v2OriginalRefresh=refreshPosts;refreshPosts=async()=>{await v2OriginalRefresh();await v2AdminStats();await v2LikeCounts()};
 supabase?.auth.onAuthStateChange(()=>setTimeout(v2LikeCounts,0));v2LikeCounts();
+
+});
 </script>
+<section id="premiumHighlights" class="wrap"><div class="featured-strip">
+<article class="featured-card"><span class="overline" style="color:#fff">YASIN'S EDITORIAL SPACE</span><h3>Stories worth your time.</h3><p>ভাবনা, অভিজ্ঞতা ও শেখার গল্প—একটি সুন্দর পাঠ-অভিজ্ঞতায়।</p><a class="btn" href="#blog">Explore the journal ↗</a></article>
+<article class="featured-card secondary-feature"><span class="overline">READER COMMUNITY</span><h3>Read. React. Connect.</h3><p>লেখা পড়ুন, পছন্দের পোস্টে Like দিন এবং নিজের মতামত জানান।</p><a class="btn secondary" href="#comments">Join the conversation ↗</a></article>
+</div></section>
+<dialog id="profileDialog"><div class="modal-head"><h2>Reader Profile</h2><button class="modal-close" data-close="profileDialog">×</button></div><form id="profileForm" class="v2-form">
+<label>Display name<input class="field" id="profileName" maxlength="80" placeholder="Your name"></label>
+<label>Short bio<textarea class="field" id="profileBio" rows="3" maxlength="240"></textarea></label>
+<label>Avatar image URL<input class="field" id="profileAvatar" type="url" placeholder="https://..."></label>
+<button class="btn primary" type="submit">Save profile</button><p id="profileStatus" class="muted"></p></form></dialog>
+<dialog id="notificationDialog"><div class="modal-head"><h2>Notifications</h2><button class="modal-close" data-close="notificationDialog">×</button></div><div id="notificationList"><p class="muted">Login to view notifications.</p></div></dialog>
+
 </body></html>
