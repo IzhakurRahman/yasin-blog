@@ -212,11 +212,11 @@ body:not(.is-loading) #loadingScreen{opacity:0;visibility:hidden;pointer-events:
 <dialog id="adminDialog"><div class="modal-head"><h2 data-i18n="adminLoginTitle">Secure Admin Login</h2><button class="modal-close" data-close="adminDialog">×</button></div>
 <div id="loginPanel" class="stack"><p class="muted">Supabase configuration required. Admin access is protected by Supabase Auth and database policies.</p><input class="field" id="adminEmail" type="email" placeholder="Admin email"><input class="field" id="adminPassword" type="password" placeholder="Password"><button class="btn primary" id="loginButton" data-i18n="adminLoginButton">Login</button><small id="adminStatus" class="muted"></small></div>
 <div id="dashboardPanel" class="hidden stack"><h3>Dashboard</h3>
-<div class="admin-grid"><input class="field" id="newTitle" placeholder="Post title"><input class="field" id="newCategory" placeholder="Category"><textarea class="field wide" id="newExcerpt" rows="2" placeholder="Excerpt"></textarea><textarea class="field wide" id="newBody" rows="6" placeholder="Full post content"></textarea><input class="field wide" id="newCover" type="url" placeholder="Cover image URL (optional)"></div>
+<div class="admin-grid"><input class="field" id="newTitle" placeholder="Post title"><input class="field" id="newCategory" placeholder="Category"><textarea class="field wide" id="newExcerpt" rows="2" placeholder="Excerpt"></textarea><textarea class="field wide" id="newBody" rows="6" placeholder="Full post content"></textarea><input class="field wide" id="newCover" type="url" placeholder="Cover image URL (optional)"><label class="muted wide" for="newCoverFile">অথবা ফোনের Gallery থেকে ছবি বেছে নাও</label><input class="field wide" id="newCoverFile" type="file" accept="image/*"><small class="muted wide">ছবিটি Supabase Storage-এ Upload হয়ে Post cover হিসেবে যুক্ত হবে।</small></div>
 <div class="admin-post-actions"><button class="btn primary" id="publishButton">Publish post</button><button class="btn secondary hidden" id="cancelEditButton" type="button">Cancel edit</button></div>
 <p class="muted" id="dashboardStatus"></p>
 <div class="stat-grid"><div class="stat-card"><span class="muted">Published posts</span><strong id="statPosts">—</strong></div><div class="stat-card"><span class="muted">Subscribers</span><strong id="statSubs">—</strong></div><div class="stat-card"><span class="muted">Page views</span><strong id="statViews">—</strong></div></div>
-<h3>Community Overview</h3><div class="v2-admin-extra"><div class="stat-card"><span class="muted">Reader accounts</span><strong id="v2UserCount">—</strong></div><div class="stat-card"><span class="muted">Post likes</span><strong id="v2LikeCount">—</strong></div><div class="stat-card"><span class="muted">Comments</span><strong id="v2CommentCount">—</strong></div></div><p class="muted" id="v2AdminStatus">Community statistics.</p><h3>Pending Comments / মন্তব্য অনুমোদন</h3><div id="v2PendingComments" class="stack"><p class="muted">Admin login করলে Pending comments দেখা যাবে।</p></div><h3>Gallery Manager</h3><p class="muted">ছবি আপলোডের জন্য Supabase Storage-এ `yasin-gallery` bucket ও migration policy প্রয়োজন।</p><input class="field" id="galleryUpload" type="file" accept="image/*"><button class="btn secondary" id="uploadGalleryButton" type="button">Upload photo</button>
+<h3>Community Overview</h3><div class="v2-admin-extra"><div class="stat-card"><span class="muted">Reader accounts</span><strong id="v2UserCount">—</strong></div><div class="stat-card"><span class="muted">Post likes</span><strong id="v2LikeCount">—</strong></div><div class="stat-card"><span class="muted">Comments</span><strong id="v2CommentCount">—</strong></div></div><p class="muted" id="v2AdminStatus">Community statistics.</p><h3>Pending Comments / মন্তব্য অনুমোদন</h3><div id="v2PendingComments" class="stack"><p class="muted">Admin login করলে Pending comments দেখা যাবে।</p></div><h3>All Comments / সব মন্তব্য</h3><div id="v2AllComments" class="stack"><p class="muted">Admin login করলে সব মন্তব্য দেখা যাবে।</p></div><h3>Gallery Manager</h3><p class="muted">Gallery ছবিগুলো এখানে দেখা ও Delete করা যাবে।</p><input class="field" id="galleryUpload" type="file" accept="image/*"><button class="btn secondary" id="uploadGalleryButton" type="button">Upload photo</button><div id="adminGalleryList" class="stack"></div><h3>About Me & Interests / Skills</h3><label>About Me text<textarea class="field" id="aboutEditor" rows="5"></textarea></label><label>Interests & Skills (প্রতি লাইনে একটি করে)<textarea class="field" id="skillsEditor" rows="5"></textarea></label><button class="btn primary" id="saveAboutSkills" type="button">Save About & Skills</button><small class="muted" id="aboutSkillsStatus">এডিট করে Save চাপো।</small>
 <h3>Newsletter Subscribers</h3><div id="subscriberList" class="stack"><p class="muted">Login করলে subscriber list লোড হবে।</p></div>
 <hr style="border:0;border-top:1px solid var(--line);width:100%"><h3>Manage Posts / লেখা পরিচালনা</h3><div id="adminPostsList" class="stack"><p class="muted">পোস্ট লোড হচ্ছে...</p></div><button class="btn secondary" id="logoutButton">Logout</button></div>
 </dialog>
@@ -277,17 +277,82 @@ async function loadBackend(){
 $("commentForm").onsubmit=async e=>{e.preventDefault();if(!supabase){$("commentNotice").textContent="মন্তব্য অনলাইনে পাঠাতে Supabase config প্রয়োজন।";return}const f=new FormData(e.target);const {error}=await supabase.from("comments").insert({name:f.get("name"),message:f.get("message")});$("commentNotice").textContent=error?"মন্তব্য পাঠানো যায়নি। পরে চেষ্টা করো।":"ধন্যবাদ! মন্তব্যটি moderation-এর জন্য পাঠানো হয়েছে।";if(!error)e.target.reset()};
 $("newsletterForm").onsubmit=async e=>{e.preventDefault();if(!supabase){$("newsletterNotice").textContent="Newsletter backend configure করা হয়নি।";return}const f=new FormData(e.target);const {error}=await supabase.from("subscribers").insert({email:f.get("email")});$("newsletterNotice").textContent=error?(error.code==="23505"?"এই ইমেইল আগে থেকেই subscribed।":"Subscription সম্পন্ন হয়নি।"):"সাবস্ক্রাইব করার জন্য ধন্যবাদ!";if(!error)e.target.reset()};
 let editingPostId=null;
-function resetPostEditor(){editingPostId=null;$("newTitle").value="";$("newCategory").value="";$("newExcerpt").value="";$("newBody").value="";$("newCover").value="";$("publishButton").textContent="Publish post";$("cancelEditButton").classList.add("hidden")}
+function resetPostEditor(){editingPostId=null;$("newTitle").value="";$("newCategory").value="";$("newExcerpt").value="";$("newBody").value="";$("newCover").value="";if($("newCoverFile"))$("newCoverFile").value="";$("publishButton").textContent="Publish post";$("cancelEditButton").classList.add("hidden")}
 async function refreshPosts(){if(!supabase)return;const {data,error}=await supabase.from("posts").select("*").order("created_at",{ascending:false});if(error){$("dashboardStatus").textContent="পোস্ট লোড হয়নি: "+error.message;return}posts=data||[];renderPosts();renderAdminPosts();$("statPosts").textContent=posts.filter(x=>x.published).length;const [{count:subs},{data:views}]=await Promise.all([supabase.from("subscribers").select("id",{count:"exact",head:true}),supabase.rpc("get_public_page_view_count")]);$("statSubs").textContent=subs??"—";$("statViews").textContent=views??"—";const {data:emails}=await supabase.from("subscribers").select("email,created_at").order("created_at",{ascending:false}).limit(30);$("subscriberList").innerHTML=emails?.length?emails.map(x=>`<div class="admin-post">${esc(x.email)} <small class="muted">${x.created_at?new Date(x.created_at).toLocaleDateString():""}</small></div>`).join(""):'<p class="muted">এখনো subscriber নেই অথবা list access হয়নি।</p>'}
 function renderAdminPosts(){const box=$("adminPostsList");if(!posts.length){box.innerHTML='<p class="muted">এখনো কোনো পোস্ট নেই।</p>';return}box.innerHTML=posts.map(p=>`<div class="admin-post"><div class="admin-post-title">${esc(p.title)}</div><div class="muted" style="font-size:12px;margin-bottom:8px">${esc(p.category||"Life")} · ${p.published?"Published":"Draft"}</div><div class="admin-post-actions"><button class="btn secondary" data-edit-post="${esc(p.id)}" type="button">Edit</button><button class="btn danger" data-delete-post="${esc(p.id)}" type="button">Delete</button></div></div>`).join("")}
 $("adminPostsList").addEventListener("click",async e=>{const edit=e.target.closest("[data-edit-post]");if(edit){const p=posts.find(x=>String(x.id)===edit.dataset.editPost);if(!p)return;editingPostId=p.id;$("newTitle").value=p.title||"";$("newCategory").value=p.category||"Life";$("newExcerpt").value=p.excerpt||"";$("newBody").value=p.body||"";$("newCover").value=p.cover_image_url||"";$("publishButton").textContent="Save changes";$("cancelEditButton").classList.remove("hidden");$("dashboardStatus").textContent="এখন লেখা সম্পাদনা করো, তারপর Save changes চাপো।";$("newTitle").scrollIntoView({behavior:"smooth",block:"center"});return}const del=e.target.closest("[data-delete-post]");if(del){const p=posts.find(x=>String(x.id)===del.dataset.deletePost);if(!p||!confirm(`“${p.title}” পোস্টটি স্থায়ীভাবে Delete করবে?`))return;del.disabled=true;const {error}=await supabase.from("posts").delete().eq("id",p.id);if(error){$("dashboardStatus").textContent="Delete হয়নি: "+error.message;del.disabled=false;return}const bookmarks=saved().filter(x=>String(x)!==String(p.id));localStorage.setItem("yasinBookmarks",JSON.stringify(bookmarks));$("dashboardStatus").textContent="Post deleted successfully.";if(String(editingPostId)===String(p.id))resetPostEditor();await refreshPosts()}});
 $("cancelEditButton").onclick=()=>{resetPostEditor();$("dashboardStatus").textContent="Edit বাতিল করা হয়েছে।"};
 $("loginButton").onclick=async()=>{if(!supabase){$("adminStatus").textContent="config.js-এ Supabase URL ও anon key বসাও।";return}const {error}=await supabase.auth.signInWithPassword({email:$("adminEmail").value,password:$("adminPassword").value});$("adminStatus").textContent=error?"Login ব্যর্থ। তথ্য যাচাই করো।":"Login successful.";if(!error){$("loginPanel").classList.add("hidden");$("dashboardPanel").classList.remove("hidden");await refreshPosts()}};
 $("logoutButton").onclick=async()=>{await supabase?.auth.signOut();resetPostEditor();$("dashboardPanel").classList.add("hidden");$("loginPanel").classList.remove("hidden")};
-$("publishButton").onclick=async()=>{if(!supabase)return;const {data:{user}}=await supabase.auth.getUser();if(!user){$("dashboardStatus").textContent="আগে Login করো।";return}const payload={title:$("newTitle").value.trim(),category:$("newCategory").value.trim()||"Life",excerpt:$("newExcerpt").value.trim(),body:$("newBody").value.trim(),cover_image_url:$("newCover").value.trim()||null,published:true,author_id:user.id};if(!payload.title||!payload.body){$("dashboardStatus").textContent="Post title এবং Full post content দিতে হবে।";return}let error;if(editingPostId){({error}=await supabase.from("posts").update({title:payload.title,category:payload.category,excerpt:payload.excerpt,body:payload.body,cover_image_url:payload.cover_image_url}).eq("id",editingPostId));$("dashboardStatus").textContent=error?"Update ব্যর্থ: "+error.message:"Post updated successfully!"}else{({error}=await supabase.from("posts").insert(payload));$("dashboardStatus").textContent=error?"Publish ব্যর্থ: "+error.message:"Post published!"}if(!error){resetPostEditor();await refreshPosts()}};
+$("publishButton").onclick=async()=>{
+ if(!supabase)return;
+ const {data:{user}}=await supabase.auth.getUser();
+ if(!user){$("dashboardStatus").textContent="আগে Admin Login করো।";return}
+ const file=$("newCoverFile")?.files?.[0]||null;
+ let coverUrl=$("newCover").value.trim()||null;
+ if(file){
+  if(!file.type.startsWith("image/")){$("dashboardStatus").textContent="শুধু Image file নির্বাচন করো।";return}
+  if(file.size>8*1024*1024){$("dashboardStatus").textContent="ছবির সাইজ 8 MB-এর কম হতে হবে।";return}
+  $("publishButton").disabled=true;$("dashboardStatus").textContent="Cover photo Upload হচ্ছে...";
+  const safe=file.name.toLowerCase().replace(/[^a-z0-9._-]/g,"-");
+  const path="blog-covers/"+Date.now()+"-"+safe;
+  const {error:uploadError}=await supabase.storage.from("yasin-gallery").upload(path,file,{upsert:false,contentType:file.type});
+  if(uploadError){$("dashboardStatus").textContent="ছবি Upload হয়নি: "+uploadError.message;$("publishButton").disabled=false;return}
+  const {data:urlData}=supabase.storage.from("yasin-gallery").getPublicUrl(path);
+  coverUrl=urlData?.publicUrl||null;
+  if(!coverUrl){$("dashboardStatus").textContent="ছবির Public URL পাওয়া যায়নি।";$("publishButton").disabled=false;return}
+ }
+ const payload={title:$("newTitle").value.trim(),category:$("newCategory").value.trim()||"Life",excerpt:$("newExcerpt").value.trim(),body:$("newBody").value.trim(),cover_image_url:coverUrl,published:true,author_id:user.id};
+ if(!payload.title||!payload.body){$("dashboardStatus").textContent="Post title এবং Full post content দিতে হবে।";$("publishButton").disabled=false;return}
+ let error;
+ if(editingPostId){
+  ({error}=await supabase.from("posts").update({title:payload.title,category:payload.category,excerpt:payload.excerpt,body:payload.body,cover_image_url:payload.cover_image_url}).eq("id",editingPostId));
+  $("dashboardStatus").textContent=error?"Update ব্যর্থ: "+error.message:"Post updated successfully!";
+ }else{
+  ({error}=await supabase.from("posts").insert(payload));
+  $("dashboardStatus").textContent=error?"Publish ব্যর্থ: "+error.message:"Post published!";
+ }
+ $("publishButton").disabled=false;
+ if(!error){resetPostEditor();await refreshPosts()}
+};
 
 $("sharePost").onclick=async()=>{const p=window.currentReadPost;if(!p)return;const url=location.href.split("#")[0]+"#blog";if(navigator.share){try{await navigator.share({title:p.title,text:p.excerpt||"",url})}catch(e){}}else{await navigator.clipboard.writeText(url);alert("লিংক কপি হয়েছে।")}};
 $("uploadGalleryButton").onclick=async()=>{const file=$("galleryUpload").files[0];if(!file){$("dashboardStatus").textContent="আগে একটি ছবি নির্বাচন করো।";return}if(!supabase)return;const safe=file.name.toLowerCase().replace(/[^a-z0-9._-]/g,"-");const path=Date.now()+"-"+safe;const {error}=await supabase.storage.from("yasin-gallery").upload(path,file,{upsert:false});if(error){$("dashboardStatus").textContent="Upload হয়নি: "+error.message;return}const {data}=supabase.storage.from("yasin-gallery").getPublicUrl(path);const b=document.createElement("button");b.className="gallery-item";b.dataset.src=data.publicUrl;b.innerHTML=`<img alt="Gallery photo" src="${esc(data.publicUrl)}">`;$("galleryGrid").appendChild(b);$("dashboardStatus").textContent="ছবি Gallery-তে যোগ হয়েছে।";$("galleryUpload").value=""};
+async function loadAdminGallery(){
+ const box=$("adminGalleryList");if(!box||!supabase)return;
+ const {data,error}=await supabase.storage.from("yasin-gallery").list("",{limit:100,sortBy:{column:"created_at",order:"desc"}});
+ if(error){box.innerHTML="<p class='muted'>Gallery load হয়নি: "+esc(error.message)+"</p>";return}
+ const files=(data||[]).filter(f=>f.name&&!f.name.startsWith("."));
+ if(!files.length){box.innerHTML="<p class='muted'>Gallery খালি।</p>";return}
+ box.innerHTML=files.map(f=>{const {data:u}=supabase.storage.from("yasin-gallery").getPublicUrl(f.name);return `<div class="admin-post" style="display:flex;align-items:center;gap:12px"><img src="${esc(u.publicUrl)}" alt="" style="width:76px;height:64px;object-fit:cover;border-radius:10px"><span style="flex:1;overflow-wrap:anywhere">${esc(f.name)}</span><button class="btn danger" type="button" data-gallery-delete="${esc(f.name)}">Delete</button></div>`}).join("");
+}
+$("adminGalleryList")?.addEventListener("click",async e=>{
+ const b=e.target.closest("[data-gallery-delete]");if(!b)return;
+ if(!confirm("এই Gallery ছবিটি Delete করবে?"))return;
+ b.disabled=true;const {error}=await supabase.storage.from("yasin-gallery").remove([b.dataset.galleryDelete]);
+ if(error){$("dashboardStatus").textContent="Gallery delete হয়নি: "+error.message;b.disabled=false;return}
+ $("dashboardStatus").textContent="Gallery photo deleted.";await loadAdminGallery();
+});
+$("uploadGalleryButton").addEventListener("click",()=>setTimeout(loadAdminGallery,800));
+
+const defaultAboutText="আমি Yasin—একজন শিক্ষার্থী। শেখা, নিজের ভাবনা প্রকাশ করা এবং প্রতিদিন একটু একটু করে এগিয়ে যাওয়ার যাত্রা এখানে লিখে রাখি।\nএই ব্লগে থাকবে আমার ব্যক্তিগত গল্প, শেখার অভিজ্ঞতা, আগ্রহ এবং সৃজনশীল কাজ। সময়ের সঙ্গে এই পরিচিতি আরও সমৃদ্ধ হবে।\nMy goal is to learn, create and document the journey—one step at a time.";
+const defaultSkillText="Learning\nWriting\nTechnology\nCreativity\nPersonal Growth";
+function loadAboutSkills(){
+ const about=localStorage.getItem("yasinAboutText")||defaultAboutText;
+ const skills=localStorage.getItem("yasinSkillsText")||defaultSkillText;
+ $("aboutEditor").value=about;$("skillsEditor").value=skills;
+ const target=document.querySelector("#portfolio .portfolio > div:first-child");
+ if(target){const ps=about.split("\\n").filter(Boolean);target.querySelectorAll("p").forEach((p,i)=>p.textContent=ps[i]||"");}
+ const skillBox=document.querySelector("#portfolio .portfolio > div:nth-child(2) .skills");
+ if(skillBox){skillBox.innerHTML=skills.split("\\n").map(x=>x.trim()).filter(Boolean).map(x=>`<span class="skill">${esc(x)}</span>`).join("")}
+}
+$("saveAboutSkills")?.addEventListener("click",()=>{
+ localStorage.setItem("yasinAboutText",$("aboutEditor").value);
+ localStorage.setItem("yasinSkillsText",$("skillsEditor").value);
+ loadAboutSkills();$("aboutSkillsStatus").textContent="About Me ও Interests & Skills Save হয়েছে এই Browser-এ।";
+});
+loadAboutSkills();
+
 
 // Reader account: separate from the protected administrator account.
 let userAuthMode="login";let activeReader=null;
@@ -309,6 +374,24 @@ let v2CurrentPost=null;
 const v2User=async()=>{if(!supabase)return null;try{const {data}=await supabase.auth.getUser();return data?.user||null}catch{return null}};
 v2$("profileOpen")?.addEventListener("click",async()=>{const u=await v2User();if(!u){alert("Please login first.");return}const m=u.user_metadata||{};v2$("profileName").value=m.full_name||"";v2$("profileBio").value=m.bio||"";v2$("profileAvatar").value=m.avatar_url||"";v2msg("profileStatus","");v2$("profileDialog").showModal()});
 v2$("profileForm")?.addEventListener("submit",async e=>{e.preventDefault();const {error}=await supabase.auth.updateUser({data:{full_name:v2$("profileName").value.trim(),bio:v2$("profileBio").value.trim(),avatar_url:v2$("profileAvatar").value.trim()}});v2msg("profileStatus",error?error.message:"Profile saved successfully.")});
+v2$("profileAvatarFile")?.addEventListener("change",async()=>{
+ const file=v2$("profileAvatarFile").files?.[0];if(!file)return;
+ const u=await v2User();if(!u){v2msg("profileStatus","আগে Reader Login করো।");return}
+ if(!file.type.startsWith("image/")||file.size>5*1024*1024){v2msg("profileStatus","৫ MB-এর কম Image file নির্বাচন করো।");return}
+ v2msg("profileStatus","Profile picture Upload হচ্ছে...");
+ const ext=(file.name.split(".").pop()||"jpg").toLowerCase().replace(/[^a-z0-9]/g,"")||"jpg";
+ const path="profile-avatars/"+u.id+"-"+Date.now()+"."+ext;
+ const {error}=await supabase.storage.from("yasin-gallery").upload(path,file,{upsert:true,contentType:file.type});
+ if(error){v2msg("profileStatus","Upload হয়নি: "+error.message);return}
+ const {data}=supabase.storage.from("yasin-gallery").getPublicUrl(path);
+ v2$("profileAvatar").value=data.publicUrl;v2msg("profileStatus","ছবি Upload হয়েছে। Save profile চাপো।");
+});
+v2$("deleteProfileAvatar")?.addEventListener("click",async()=>{
+ if(!confirm("Profile picture URL মুছে ফেলবে?"))return;
+ const {error}=await supabase.auth.updateUser({data:{avatar_url:""}});
+ if(error){v2msg("profileStatus",error.message);return}
+ v2$("profileAvatar").value="";v2$("profileAvatarFile").value="";v2msg("profileStatus","Profile picture সরানো হয়েছে।");
+});
 v2$("notificationsOpen")?.addEventListener("click",async()=>{v2$("notificationDialog").showModal();const u=await v2User();if(!u){v2$("notificationList").innerHTML="<p>Please login to view notifications.</p>";return}const {data,error}=await supabase.from("notifications").select("id,title,message,created_at").eq("user_id",u.id).order("created_at",{ascending:false}).limit(30);v2$("notificationList").innerHTML=error?"Install the V2 SQL migration to enable notifications.":(data||[]).map(n=>`<div class="v2-list-item"><strong>${esc(n.title||"Update")}</strong><p>${esc(n.message||"")}</p><small>${n.created_at?new Date(n.created_at).toLocaleString():""}</small></div>`).join("")||"<p>No notifications yet.</p>"});
 async function v2Like(id){const u=await v2User();if(!u){alert("Login to like a post.");return}const {data,error}=await supabase.from("post_likes").select("id").eq("post_id",id).eq("user_id",u.id).maybeSingle();if(error){console.error("Like lookup failed:",error);alert("Like database error: "+(error.message||error.details||error.hint||"Unknown error")+" (code: "+(error.code||"n/a")+")");return}const result=data?await supabase.from("post_likes").delete().eq("id",data.id):await supabase.from("post_likes").insert({post_id:id,user_id:u.id});if(result.error){console.error("Like update failed:",result.error);alert("Like save error: "+(result.error.message||"Unknown error")+" (code: "+(result.error.code||"n/a")+")");return}await v2LikeCounts()}
 async function v2LikeCounts(){if(!supabase)return;const {data,error}=await supabase.from("post_likes").select("post_id");if(error)return;const c={};(data||[]).forEach(x=>c[x.post_id]=(c[x.post_id]||0)+1);document.querySelectorAll("[data-like-count]").forEach(el=>el.textContent=(c[el.dataset.likeCount]||0)+" Likes");if(v2$("v2LikeCount"))v2$("v2LikeCount").textContent=String((data||[]).length)}
@@ -327,6 +410,35 @@ async function v2LoadPendingComments(){
  if(!rows.length){box.innerHTML="<p class='muted'>No pending comments. কোনো Pending মন্তব্য নেই।</p>";return}
  box.innerHTML=rows.map(c=>{const post=posts.find(p=>String(p.id)===String(c.post_id));return `<div class="admin-post"><strong>${esc(c.name||"Reader")}</strong><p>${esc(c.message||"")}</p><small class="muted">Post: ${esc(post?.title||c.post_id||"Unknown")} · ${c.created_at?new Date(c.created_at).toLocaleString():""}</small><div class="admin-post-actions" style="margin-top:10px"><button class="btn primary" type="button" data-v2-approve="${esc(c.id)}">Approve</button><button class="btn danger" type="button" data-v2-reject="${esc(c.id)}">Reject</button></div></div>`}).join("");
 }
+async function v2LoadAllComments(){
+ const box=v2$("v2AllComments");if(!box||!supabase)return;
+ box.innerHTML="<p class='muted'>Loading comments...</p>";
+ const {data,error}=await supabase.from("comments").select("id,post_id,name,message,created_at,approved,parent_id").order("created_at",{ascending:false}).limit(200);
+ if(error){console.error("All comments load failed:",error);box.innerHTML="<p class='muted'>Comments load failed: "+esc(error.message)+"</p>";return}
+ const rows=data||[];
+ if(!rows.length){box.innerHTML="<p class='muted'>এখনো কোনো মন্তব্য নেই।</p>";return}
+ box.innerHTML=rows.map(c=>{const post=posts.find(p=>String(p.id)===String(c.post_id));return `<div class="admin-post"><strong>${esc(c.name||"Reader")}</strong><p>${esc(c.message||"")}</p><small class="muted">Post: ${esc(post?.title||c.post_id||"Unknown")} · ${c.approved?"Approved":"Pending"} · ${c.created_at?new Date(c.created_at).toLocaleString():""}</small><div class="admin-post-actions" style="margin-top:10px"><button class="btn secondary" type="button" data-v2-edit-comment="${esc(c.id)}">Edit comment</button><button class="btn danger" type="button" data-v2-delete-comment="${esc(c.id)}">Delete comment</button></div></div>`}).join("");
+}
+v2$("v2AllComments")?.addEventListener("click",async e=>{
+ const edit=e.target.closest("[data-v2-edit-comment]");
+ if(edit){
+  const card=edit.closest(".admin-post");
+  const current=card?.querySelector("p")?.textContent||"";
+  const next=prompt("মন্তব্য Edit করো:",current);
+  if(next===null)return;
+  if(!next.trim()){alert("মন্তব্য খালি রাখা যাবে না।");return}
+  edit.disabled=true;
+  const {error}=await supabase.from("comments").update({message:next.trim()}).eq("id",edit.dataset.v2EditComment);
+  if(error){alert("Comment edit failed: "+error.message);edit.disabled=false;return}
+  await v2LoadAllComments();await v2LoadPendingComments();return;
+ }
+ const btn=e.target.closest("[data-v2-delete-comment]");if(!btn)return;
+ if(!confirm("এই মন্তব্যটি স্থায়ীভাবে Delete করবে?"))return;
+ btn.disabled=true;
+ const {error}=await supabase.from("comments").delete().eq("id",btn.dataset.v2DeleteComment);
+ if(error){alert("Comment delete failed: "+error.message);btn.disabled=false;return}
+ await v2LoadAllComments();await v2LoadPendingComments();await v2AdminStats();
+});
 v2$("v2PendingComments")?.addEventListener("click",async e=>{
  const approve=e.target.closest("[data-v2-approve]"),reject=e.target.closest("[data-v2-reject]");if(!approve&&!reject)return;
  const id=approve?approve.dataset.v2Approve:reject.dataset.v2Reject;
@@ -336,7 +448,7 @@ v2$("v2PendingComments")?.addEventListener("click",async e=>{
  if(result.error){alert("Comment action failed: "+result.error.message);btn.disabled=false;return}
  await v2LoadPendingComments();await v2AdminStats();
 });
-const v2OriginalRefresh=refreshPosts;refreshPosts=async()=>{await v2OriginalRefresh();await v2AdminStats();await v2LikeCounts();await v2LoadPendingComments()};
+const v2OriginalRefresh=refreshPosts;refreshPosts=async()=>{await v2OriginalRefresh();await v2AdminStats();await v2LikeCounts();await v2LoadPendingComments();await v2LoadAllComments();await loadAdminGallery()};
 supabase?.auth.onAuthStateChange(()=>setTimeout(v2LikeCounts,0));v2LikeCounts();
 
 });
@@ -348,7 +460,7 @@ supabase?.auth.onAuthStateChange(()=>setTimeout(v2LikeCounts,0));v2LikeCounts();
 <dialog id="profileDialog"><div class="modal-head"><h2>Reader Profile</h2><button class="modal-close" data-close="profileDialog">×</button></div><form id="profileForm" class="v2-form">
 <label>Display name<input class="field" id="profileName" maxlength="80" placeholder="Your name"></label>
 <label>Short bio<textarea class="field" id="profileBio" rows="3" maxlength="240"></textarea></label>
-<label>Avatar image URL<input class="field" id="profileAvatar" type="url" placeholder="https://..."></label>
+<label>Avatar image URL<input class="field" id="profileAvatar" type="url" placeholder="https://..."></label><label>অথবা ফোনের Gallery থেকে Profile Picture Upload<input class="field" id="profileAvatarFile" type="file" accept="image/*"></label><button class="btn secondary" id="deleteProfileAvatar" type="button">Delete profile picture</button>
 <button class="btn primary" type="submit">Save profile</button><p id="profileStatus" class="muted"></p></form></dialog>
 <dialog id="notificationDialog"><div class="modal-head"><h2>Notifications</h2><button class="modal-close" data-close="notificationDialog">×</button></div><div id="notificationList"><p class="muted">Login to view notifications.</p></div></dialog>
 
