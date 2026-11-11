@@ -151,6 +151,13 @@ body:not(.is-loading) #loadingScreen{opacity:0;visibility:hidden;pointer-events:
 #adminDialog .modal-head .overline{color:#e5dcff}
 @media(max-width:560px){.navtools{gap:5px}.navtools .iconbtn{padding:9px 10px;font-size:12px}.auth-dialog{padding:22px}.auth-brand h2{font-size:22px}#adminDialog .modal-head,#adminDialog #loginPanel,#adminDialog #dashboardPanel{padding-left:20px;padding-right:20px}}
 
+
+/* FIX: make the full admin dashboard scrollable on phones */
+#adminDialog{max-height:90vh;max-height:90dvh;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain; -webkit-overflow-scrolling:touch;}
+#adminDialog .modal-head{position:sticky;top:0;z-index:5;}
+#adminDialog #dashboardPanel{min-height:0;padding-bottom:36px;}
+#adminDialog #dashboardPanel>*{min-width:0;}
+@media(max-width:560px){#adminDialog{width:calc(100% - 16px);max-height:92vh;max-height:92dvh;margin:auto;}#adminDialog #dashboardPanel{padding-bottom:44px;}}
 </style>
 <style id="premium-v2-styles">
 :root{--v2-glass:color-mix(in srgb,var(--panel) 84%,transparent)}
